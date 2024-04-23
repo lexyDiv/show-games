@@ -3,6 +3,10 @@ const express = require('express');
 
 const app = express();
 
+const mainRoutes = require('./reutes/main.routes');
+
+app.use('/', mainRoutes);
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
