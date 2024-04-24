@@ -21,6 +21,14 @@ function Wc({ title }) {
       <script src="wc/scripts/main_menu.js" />
       <script src="wc/scripts/menu_push_2.js" />
       <script src="wc/scripts/levels.js" />
+
+      <script src="wc/scripts/soundControl.js" />
+      <script src="wc/scripts/landObj.js" />
+      <script src="wc/scripts/mapInit.js" />
+      <script src="wc/scripts/shablonLand.js" />
+      <script src="wc/scripts/unitCellUpdate.js" />
+      <script src="wc/scripts/fractionsCreate.js" />
+
       <script src="wc/scripts/basic.js" />
       
     </Layout>
