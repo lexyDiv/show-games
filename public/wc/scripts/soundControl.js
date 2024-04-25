@@ -34,7 +34,7 @@ Sound.prototype.prog = function () {
 };
 
 const select_sound_fly = function (unit, sound_type, volume) {
-  if (volume <= 0) {
+  if (volume <= 0 || !volume || volume!==volume) {
     return;
   }
 
@@ -133,17 +133,15 @@ const select_sound_fly = function (unit, sound_type, volume) {
 };
 
 const select_sound_fight = function (unit, sound_type, volume) {
-  if (volume === 0) {
+  if (volume <= 0 || !volume || volume!==volume) {
     return;
   }
 
-  if (volume) {
-    if (volume < 0) {
-      return;
-    } else if (volume > 1) {
+ 
+if (volume > 1) {
       volume = 1;
     }
-  }
+
 
   if (unit.sweeme) {
     if (sound_type === "dead") {
@@ -396,7 +394,7 @@ const select_sound = function (unit, sound_type) {
       }
     } else if (unit.buildready >= unit.hpfull) {
       if (unit.hp <= unit.hpfull / 1.5) {
-        console.log(unit);
+       
 
         let s = new Audio();
         s.src = "wc/sounds/Burning.wav";
