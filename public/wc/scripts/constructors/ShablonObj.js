@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 /* eslint-disable no-unused-vars */
-const SablonObj = function (horizont, vertikal, father, tower) {
+const SablonObj = function (horizont, vertikal, father, tower, cell) {
   this.horizont = horizont;
   this.vertikal = vertikal;
 
@@ -10,6 +10,6 @@ const SablonObj = function (horizont, vertikal, father, tower) {
   this.father = father;
 
   this.iBorn = false;
-
+  this.cell = cell;
   this.tower = tower;
 };

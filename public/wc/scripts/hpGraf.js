@@ -1,17 +1,25 @@
-const hp_graf = function (x, res, max) {
-  let hp_proc = (res * 100) / max;
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
+/* eslint-disable camelcase */
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
 
-  let gabarit_x = (res * x) / max;
+const hp_graf = function (x, res, max) {
+  const hp_proc = (res * 100) / max;
+
+  const gabarit_x = (res * x) / max;
 
   let color;
 
   if (hp_proc > 70) {
-    color = "green";
+    color = 'green';
   } else if (hp_proc > 40) {
-    color = "yellow";
+    color = 'yellow';
   } else {
-    color = "red";
+    color = 'red';
   }
 
-  return { gabarit: gabarit_x, color: color, proc: hp_proc };
+  return { gabarit: gabarit_x, color, proc: hp_proc };
 };

@@ -1,9 +1,18 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
+/* eslint-disable camelcase */
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
+
 const in_pausa_menu_obj_in_create = function () {
   if (music) {
     music.pausa_command = true;
   }
 
-  select_sound_fly(undefined, "click", 1);
+  select_sound_fly(undefined, 'click', 1);
 
   zst_obj = {
     x: 350,
@@ -22,9 +31,9 @@ const in_pausa_menu_obj_in_create = function () {
       gabY: 30,
       alfa: 0,
       alfa_shadow: 0,
-      text_a: "Exit to main menu",
+      text_a: 'Exit to main menu',
       mas: 1,
-      act: "exit",
+      act: 'exit',
     },
     {
       x: 500,
@@ -33,9 +42,9 @@ const in_pausa_menu_obj_in_create = function () {
       gabY: 30,
       alfa: 0,
       alfa_shadow: 0,
-      text_a: "Restart scenario",
+      text_a: 'Restart scenario',
       mas: 1,
-      act: "res",
+      act: 'res',
     },
     {
       x: 500,
@@ -44,9 +53,9 @@ const in_pausa_menu_obj_in_create = function () {
       gabY: 30,
       alfa: 0,
       alfa_shadow: 0,
-      text_a: "Return to game",
+      text_a: 'Return to game',
       mas: 1,
-      act: "pausa",
+      act: 'pausa',
     },
     { click: false },
   ];

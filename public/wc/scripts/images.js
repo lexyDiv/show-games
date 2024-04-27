@@ -1,5 +1,11 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
 /* eslint-disable camelcase */
-// unit_menu_hi_liters human_cursor_ok
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
 
 const strel_point = new Image();
 strel_point.src = 'wc/title_images/point.png';

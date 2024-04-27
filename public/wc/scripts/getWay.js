@@ -1,6 +1,6 @@
 const getWay = function (arg, noFree, deep, target, luchnik, special) {
     //console.log("ok");
-  
+    console.log(arg.cell)
     let takt = 0;
   
     if (!arg || !arg.cell) {
@@ -10,7 +10,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
   
     forCheck += 0.0001;
   
-    if (forCheck > 100000000000) {
+    if (forCheck >= 100000000000) {
       forCheck = -forCheck;
     }
   
@@ -38,7 +38,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
         //basick=gameFielg[father.vertikal][father.horizont];
         //console.log(arg);
         //console.log(father);
-  
+   // gameFielg[father.vertikal][father.horizont] !== father && console.log('getWay - problem') ok
         gameFielg[father.vertikal][father.horizont].finish = arg.finish;
   
         //console.log(father); ok

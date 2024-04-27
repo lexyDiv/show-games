@@ -193,7 +193,7 @@ Unit.prototype.prog = function (arg) {
       rage = 1.5;
     }
   
-    /*	
+    	
   if(this.type===1
   &&(this.iGoBuild||this.fatherFraction.control==="player")
   &&this.target&&this.target.hp===this.target.hpfull
@@ -205,7 +205,7 @@ Unit.prototype.prog = function (arg) {
   this.iGetTarget=false;
   
   };	
-  //*/
+  
   
     if (this.gabarit === 50 && this.cell) {
       this.damagePointX = this.cell.x + 25;

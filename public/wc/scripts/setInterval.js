@@ -265,6 +265,8 @@ setInterval(function () {
                 let horizont = Math.floor((obj.x - removeX) / 50);
   
                 if (
+                  gameFielg[vertikal]&&
+                  gameFielg[vertikal][horizont]&&
                   gameFielg[vertikal][horizont].vossalObj &&
                   !gameFielg[vertikal][horizont].vossalObj.neitral &&
                   gameFielg[vertikal][horizont].vossalObj.fatherFraction

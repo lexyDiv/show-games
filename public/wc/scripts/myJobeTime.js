@@ -1,3 +1,14 @@
+/* eslint-disable quotes */
+/* eslint-disable no-else-return */
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable prefer-const */
+/* eslint-disable camelcase */
+/* eslint-disable no-plusplus */
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
+
 const myJoube_time = function (arg) {
   if (arg === "mag") {
     return 1000;
@@ -32,12 +43,12 @@ const myJoube_time = function (arg) {
   } else if (arg === "levelUpgrade") {
     return 1500;
   } else if (
-    arg === "dopNoFlyAttack_level" ||
-    arg === "dopNoFlyPanzer_level" ||
-    arg === "dopBallista" ||
-    arg === "dopAttack"
+    arg === "dopNoFlyAttack_level"
+    || arg === "dopNoFlyPanzer_level"
+    || arg === "dopBallista"
+    || arg === "dopAttack"
   ) {
     return 1500;
   }
-  //dopNoFlyAttack_level
+  // dopNoFlyAttack_level
 };

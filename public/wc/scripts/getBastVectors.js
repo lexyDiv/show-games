@@ -1,3 +1,9 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
+/* eslint-disable camelcase */
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
+
 const getBastVektors = function () {
   let bast = 0;
   let index = 0;
@@ -7,22 +13,18 @@ const getBastVektors = function () {
       if (i === 0) {
         bast = vektors[i];
         index = i;
-      } else {
-        if (vektors[i].f < bast.f) {
-          bast = vektors[i];
-          index = i;
-        }
+      } else if (vektors[i].f < bast.f) {
+        bast = vektors[i];
+        index = i;
       }
     }
-
-    //	console.log(vektors[i].distanse);
   }
 
   vektors.splice(index, 1);
 
   bast.inUse = true;
 
-  //console.log(bast);
+  // console.log(bast);
 
   return bast;
 };
