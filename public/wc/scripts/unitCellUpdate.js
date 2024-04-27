@@ -18,19 +18,10 @@ Unit.prototype.cellUpdate = function () {
     }
 
     for (let k = 0; k < this.contaktCells.length; k++) {
-      if (
-        gameFielg[this.contaktCells[k].vertikal][
-          this.contaktCells[k].horizont
-        ].iContaktWith.indexOf(this.contaktCells[k]) !== -1
-      ) {
-        gameFielg[this.contaktCells[k].vertikal][
-          this.contaktCells[k].horizont
-        ].iContaktWith.splice(
-          gameFielg[this.contaktCells[k].vertikal][
-            this.contaktCells[k].horizont
-          ].iContaktWith.indexOf(this.contaktCells[k]),
-          1
-        );
+      const contaktCell = this.contaktCells[k];
+      const { cell } = contaktCell;
+      if (cell.iContaktWith.indexOf(contaktCell) !== -1) {
+        cell.iContaktWith.splice(cell.iContaktWith.indexOf(contaktCell), 1);
       }
     }
 

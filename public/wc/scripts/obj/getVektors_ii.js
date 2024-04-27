@@ -1,7 +1,5 @@
 Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
-    if (!gameFielg[this.vertikal] || !gameFielg[this.vertikal][this.horizont]) {
-      return;
-    }
+
   
     /*	
     if(isNaN(this.f)){
@@ -35,7 +33,7 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
           this.iContaktWith[d].father.fatherFraction.union !==
             unit.fatherFraction.union
         ) {
-          father.finish = gameFielg[this.vertikal][this.horizont];
+          father.finish = this //gameFielg[this.vertikal][this.horizont];
   
           father.finish.myWay(father.finish);
   
@@ -52,7 +50,7 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         if (
           this.iContaktWith[d].father.persolalNumber === target.persolalNumber
         ) {
-          father.finish = gameFielg[this.vertikal][this.horizont];
+          father.finish = this//gameFielg[this.vertikal][this.horizont];
   
           father.finish.myWay(father.finish);
   

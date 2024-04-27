@@ -467,7 +467,7 @@ LandObj.prototype.vossal_contacts_moveVectorsInitialization = function (obj) {
         } else if (gameFielg[k] && gameFielg[k][j]) {
           // gameFielg[k][j].contaktWith=freeLandObjects[i];
           // freeLandObjects[i].contaktCells.push(gameFielg[k][j]);
-          this.contaktCells.push(new SablonObj(j, k, obj));
+          this.contaktCells.push(new SablonObj(j, k, obj, undefined, gameFielg[k][j]));
 
           this.contaktCells[
             this.contaktCells.length - 1
@@ -504,7 +504,7 @@ LandObj.prototype.vossal_contacts_moveVectorsInitialization = function (obj) {
         } else if (gameFielg[k] && gameFielg[k][j]) {
           // gameFielg[k][j].contaktWith=freeLandObjects[i];
           // freeLandObjects[i].contaktCells.push(gameFielg[k][j]);
-          this.contaktCells.push(new SablonObj(j, k, obj));
+          this.contaktCells.push(new SablonObj(j, k, obj, undefined, gameFielg[k][j]));
 
           this.contaktCells[
             this.contaktCells.length - 1

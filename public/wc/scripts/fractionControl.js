@@ -136,7 +136,6 @@ const fractionsControl = function () {
         fractions[i].selectUnits[k].wayLength = fractions[i].selectUnits[k].way.length;
         fractions[i].selectUnits[k].way = saveMyWey;
         // fractions[i].selectUnits[k].getWayLength();
-
         fractions[i].selectUnits[k].saveFinish = fractions[i].selectUnits[k].finish;
         fractions[i].selectUnits[k].finish = 0; /// ////////////////////////////
         fractions[i].selectUnits[k].isBlockedMem = false;

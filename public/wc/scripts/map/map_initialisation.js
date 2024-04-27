@@ -102,13 +102,14 @@ const map_initialization = function () {
   for (let i = 0; i < gameFielg.length; i++) {
     for (let k = 0; k < gameFielg[i].length; k++) {
       // console.log("ok");
-
+      gameFielg[i][k].aroundCells = [];
       for (let v = i - 1; v <= i + 1; v++) {
         for (let g = k - 1; g <= k + 1; g++) {
           // console.log("ok");
 
           if (gameFielg[v] && gameFielg[v][g] && !(i === v && k === g)) {
             gameFielg[i][k].contact_map_cells.push(gameFielg[v][g]);
+            gameFielg[i][k].aroundCells.push(gameFielg[v][g]);
 
             let cell = new SablonObj(g, v, gameFielg[i][k], null, gameFielg[v][g]);
 

@@ -7,6 +7,25 @@
 /* eslint-disable func-names */
 /* eslint-disable no-unused-vars */
 
+ function isBlockedBuilding(target) {
+  for (let i = 0; i < target.contaktCells.length; i++) {
+    const { cell } = target.contaktCells[i];
+ 
+    if (
+      !cell
+      ||
+      (
+      cell &&
+      cell.free
+      )
+    ) {
+     
+      return false;
+    }
+  }
+  return true;
+};
+
 const isBlocked = function (arg) {
   for (let i = 0; i < this.contaktCells.length; i++) {
     if (
