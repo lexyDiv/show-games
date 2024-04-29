@@ -1,7 +1,5 @@
 Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
-    if (!gameFielg[this.vertikal] || !gameFielg[this.vertikal][this.horizont]) {
-      return;
-    }
+
   
     /*	
     if(isNaN(this.f)){
@@ -35,7 +33,10 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
           this.iContaktWith[d].father.fatherFraction.union !==
             unit.fatherFraction.union
         ) {
-          father.finish = gameFielg[this.vertikal][this.horizont];
+
+          // gameFielg[this.vertikal][this.horizont] !== this && console.log('BUG - 1')
+
+          father.finish = this //gameFielg[this.vertikal][this.horizont];
   
           father.finish.myWay(father.finish);
   
@@ -52,8 +53,10 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         if (
           this.iContaktWith[d].father.persolalNumber === target.persolalNumber
         ) {
-          father.finish = gameFielg[this.vertikal][this.horizont];
+          father.finish = this //gameFielg[this.vertikal][this.horizont];
   
+          // gameFielg[this.vertikal][this.horizont] !== this && console.log('BUG - 2')
+
           father.finish.myWay(father.finish);
   
           //console.log("ura");
@@ -67,7 +70,7 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         
         if(this.vertikal===target.contaktCells[d].vertikal&&this.horizont===target.contaktCells[d].horizont){
           
-        //father.finish.myWay(gameFielg[i][k]);	
+        //father.finish.myWay(cell);	
           
         father.finish=gameFielg[this.vertikal][this.horizont];
     
@@ -87,43 +90,43 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
     }
   
     //left_Up left_
-  
+    
     let koof = 0;
-  
-    for (let i = this.vertikal - 1; i < this.vertikal - 1 + 3; i++) {
-      for (let k = this.horizont - 1; k < this.horizont - 1 + 3; k++) {
+
+    
+      for (let k = 0; k < this.aroundCells.length; k++) {
         //if(isNaN(this.f)){console.log(this.father.f);};
-  
+        
+         const cell = this.aroundCells[k]
         /*		
         
-    if(gameFielg[i]&&gameFielg[i][k]&&gameFielg[i][k].startFinish.length&&
-    (gameFielg[i][k].startFinish[0].vertikal!==father.vertikal||
-    gameFielg[i][k].startFinish[0].horizont!==father.horizont||
-    gameFielg[i][k].startFinish[1].vertikal!==father.finish.vertikal||
-    gameFielg[i][k].startFinish[1].horizont!==father.finish.horizont
+    if(gameFielg[i]&&cell&&cell.startFinish.length&&
+    (cell.startFinish[0].vertikal!==father.vertikal||
+    cell.startFinish[0].horizont!==father.horizont||
+    cell.startFinish[1].vertikal!==father.finish.vertikal||
+    cell.startFinish[1].horizont!==father.finish.horizont
     )){
     
     
       
-    gameFielg[i][k].inUse=false;
-    gameFielg[i][k].h=0;
-    gameFielg[i][k].f=0;
-    gameFielg[i][k].g=0;	
+    cell.inUse=false;
+    cell.h=0;
+    cell.f=0;
+    cell.g=0;	
       
     };
       
     */
         if (
-          gameFielg[i] &&
-          gameFielg[i][k] &&
-          gameFielg[i][k].forCheck !== forCheck //||
-          //(gameFielg[i]&&gameFielg[i][k]&&isNaN(gameFielg[i][k].h))||
-          //(gameFielg[i]&&gameFielg[i][k]&&isNaN(gameFielg[i][k].f))
+
+          cell.forCheck !== forCheck //||
+          //(gameFielg[i]&&cell&&isNaN(cell.h))||
+          //(gameFielg[i]&&cell&&isNaN(cell.f))
         ) {
-          gameFielg[i][k].inUse = false;
-          gameFielg[i][k].h = 0;
-          gameFielg[i][k].f = 0;
-          gameFielg[i][k].g = 0;
+          cell.inUse = false;
+          cell.h = 0;
+          cell.f = 0;
+          cell.g = 0;
         }
         /*
     let aa;
@@ -131,10 +134,10 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
     let cc;
     
     
-    if(arg&&gameFielg[i]&&gameFielg[i][k]){
+    if(arg&&gameFielg[i]&&cell){
       
-      aa=(arg.x+50)-(gameFielg[i][k].x+50);
-      bb=(arg.y+50)-(gameFielg[i][k].y+50);
+      aa=(arg.x+50)-(cell.x+50);
+      bb=(arg.y+50)-(cell.y+50);
       
       cc=Math.sqrt(aa*aa+bb*bb);
       
@@ -157,10 +160,10 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
     let okDrag=0;
     
     
-    if(!unit.fly&&arg&&gameFielg[i]&&gameFielg[i][k]&&gameFielg[i][k].unit&&gameFielg[i][k].unit.unitStatus==="life"){
+    if(!unit.fly&&arg&&gameFielg[i]&&cell&&cell.unit&&cell.unit.unitStatus==="life"){
       
-    let a=unit.x-gameFielg[i][k].x;
-    let b=unit.y-gameFielg[i][k].y;
+    let a=unit.x-cell.x;
+    let b=unit.y-cell.y;
     
     dis=Math.sqrt(a*a+b*b);
     
@@ -180,10 +183,9 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         //floorGlobalTimer
   
         if (
-          gameFielg[i] &&
-          gameFielg[i][k] &&
-          ((gameFielg[i][k].unit && !gameFielg[i][k].unit.neitral) ||
-            (gameFielg[i][k].vossalObj && !gameFielg[i][k].vossalObj.neitral))
+
+          ((cell.unit && !cell.unit.neitral) ||
+            (cell.vossalObj && !cell.vossalObj.neitral))
         ) {
           ok2 = true; //console.log("pizdez");
         }
@@ -192,12 +194,11 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         //*/
   
         let hart =
-          gameFielg[i] &&
-          gameFielg[i][k] &&
+
           !unit.fly &&
-          (gameFielg[i][k].free ||
+          (cell.free ||
             //||
-            //(!gameFielg[i][k].free&&gameFielg[i][k].unit&&gameFielg[i][k].unit.unitStatus==="life"&&okey)
+            //(!cell.free&&cell.unit&&cell.unit.unitStatus==="life"&&okey)
             ok2);
   
         ///////////////////////
@@ -205,13 +206,13 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
         //console.log(arg);
         if (
           hart &&
-          !gameFielg[i][k].inUse &&
-          !gameFielg[i][k].f
+          !cell.inUse &&
+          !cell.f
           //&&
-          //!(gameFielg[i][k].vertikal==this.vertikal&&gameFielg[i][k].horizont==this.horizont)
+          //!(cell.vertikal==this.vertikal&&cell.horizont==this.horizont)
         ) {
-          let a = Math.abs(father.finish.horizont - gameFielg[i][k].horizont);
-          let b = Math.abs(father.finish.vertikal - gameFielg[i][k].vertikal);
+          let a = Math.abs(father.finish.horizont - cell.horizont);
+          let b = Math.abs(father.finish.vertikal - cell.vertikal);
   
           let c = a + b;
   
@@ -219,67 +220,67 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
           //if(!father.finish.horizont){console.log("koshmar " +father.finish.horizont);};/////////////!!!!!!!!!!!!!!!!
   
           if (koof === 0) {
-            gameFielg[i][k].g = this.g + 14;
+            cell.g = this.g + 14;
           }
           if (koof === 1) {
-            gameFielg[i][k].g = this.g + 10;
+            cell.g = this.g + 10;
           }
           if (koof === 2) {
-            gameFielg[i][k].g = this.g + 14;
+            cell.g = this.g + 14;
           }
   
           if (koof === 3) {
-            gameFielg[i][k].g = this.g + 10;
+            cell.g = this.g + 10;
           }
           if (koof === 5) {
-            gameFielg[i][k].g = this.g + 10;
+            cell.g = this.g + 10;
           }
   
           if (koof === 6) {
-            gameFielg[i][k].g = this.g + 14;
+            cell.g = this.g + 14;
           }
           if (koof === 7) {
-            gameFielg[i][k].g = this.g + 10;
+            cell.g = this.g + 10;
           }
           if (koof === 8) {
-            gameFielg[i][k].g = this.g + 14;
+            cell.g = this.g + 14;
           }
   
           //koof++;
           //console.log(c2);
   
-          gameFielg[i][k].father = gameFielg[this.vertikal][this.horizont];
+          cell.father = this //gameFielg[this.vertikal][this.horizont];
   
-          //this.vektors.push(gameFielg[i][k]);
+          //this.vektors.push(cell);
   
-          vektors.push(gameFielg[i][k]);
+          vektors.push(cell);
   
-          allVektors.push(gameFielg[i][k]);
+          allVektors.push(cell);
   
-          gameFielg[i][k].h = c * 10; //+c2//+v+h;
+          cell.h = c * 10; //+c2//+v+h;
   
-          gameFielg[i][k].f = gameFielg[i][k].g + gameFielg[i][k].h;
+          cell.f = cell.g + cell.h;
   
-          //gameFielg[i][k].startFinish=[father,father.finish];
+          //cell.startFinish=[father,father.finish];
   
-          gameFielg[i][k].forCheck = forCheck;
+          cell.forCheck = forCheck;
   
           /*	
       
     for(let d=0;d<target.contaktCells.length;d++){
         
-        if(gameFielg[i][k].vertikal===target.contaktCells[d].vertikal&&gameFielg[i][k].horizont===target.contaktCells[d].horizont){
+        if(cell.vertikal===target.contaktCells[d].vertikal&&cell.horizont===target.contaktCells[d].horizont){
           
-        //father.finish.myWay(gameFielg[i][k]);	
+        //father.finish.myWay(cell);	
           
-        //father.finish=gameFielg[i][k];
+        //father.finish=cell;
     
         //father.finish.myWay(father.finish);
           
         //target.stop=true;	
           
           
-          console.log(gameFielg[i][k])
+          console.log(cell)
           
           break
           
@@ -292,8 +293,8 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
   
           ///*
           if (
-            gameFielg[i][k].vertikal === father.finish.vertikal &&
-            gameFielg[i][k].horizont === father.finish.horizont
+            cell.vertikal === father.finish.vertikal &&
+            cell.horizont === father.finish.horizont
           ) {
             //console.log("sucssess!!!!!!!!!!!!!!!");
   
@@ -308,15 +309,15 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
           }
         } else if (
           hart &&
-          !gameFielg[i][k].inUse &&
-          gameFielg[i][k].f &&
+          !cell.inUse &&
+          cell.f &&
           !(
-            gameFielg[i][k].vertikal == this.vertikal &&
-            gameFielg[i][k].horizont == this.horizont
+            cell.vertikal == this.vertikal &&
+            cell.horizont == this.horizont
           )
         ) {
-          //gameFielg[i][k].startFinish=[father,father.finish];
-          gameFielg[i][k].forCheck = forCheck;
+          //cell.startFinish=[father,father.finish];
+          cell.forCheck = forCheck;
   
           let g;
   
@@ -347,26 +348,26 @@ Obj.prototype.getVektors_ii = function (arg, target, unit, luchnik) {
             g = this.g + 14;
           }
   
-          if (g < gameFielg[i][k].g) {
-            gameFielg[i][k].g = g;
+          if (g < cell.g) {
+            cell.g = g;
   
-            let a = Math.abs(father.finish.horizont - gameFielg[i][k].horizont);
-            let b = Math.abs(father.finish.vertikal - gameFielg[i][k].vertikal);
+            let a = Math.abs(father.finish.horizont - cell.horizont);
+            let b = Math.abs(father.finish.vertikal - cell.vertikal);
   
             let c = a + b;
   
-            gameFielg[i][k].father = gameFielg[this.vertikal][this.horizont];
+            cell.father = this //gameFielg[this.vertikal][this.horizont];
   
-            gameFielg[i][k].h = c * 10; //+c2//+v+h;
+            cell.h = c * 10; //+c2//+v+h;
   
-            gameFielg[i][k].f = gameFielg[i][k].g + gameFielg[i][k].h;
+            cell.f = cell.g + cell.h;
   
-            //console.log(gameFielg[i][k].f);
+            //console.log(cell.f);
           }
   
           //koof++;
         }
         koof++;
       }
-    }
+    
   };

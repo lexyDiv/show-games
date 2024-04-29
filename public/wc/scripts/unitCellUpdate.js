@@ -18,17 +18,24 @@ Unit.prototype.cellUpdate = function () {
     }
 
     for (let k = 0; k < this.contaktCells.length; k++) {
+
+      // this.contaktCells[k].cell !== this.cell.aroundCells[k] ||
+      // gameFielg[this.contaktCells[k].vertikal][
+      //   this.contaktCells[k].horizont
+      // ] !== this.contaktCells[k].cell
+      //  && console.log('BUG') // ok
+
+      const cellData = this.contaktCells[k].cell;
+
+      // cellData !== gameFielg[this.contaktCells[k].vertikal][
+      //   this.contaktCells[k].horizont
+      // ] && console.log('BUG - 1 a')
+
       if (
-        gameFielg[this.contaktCells[k].vertikal][
-          this.contaktCells[k].horizont
-        ].iContaktWith.indexOf(this.contaktCells[k]) !== -1
+        cellData.iContaktWith.indexOf(this.contaktCells[k]) !== -1
       ) {
-        gameFielg[this.contaktCells[k].vertikal][
-          this.contaktCells[k].horizont
-        ].iContaktWith.splice(
-          gameFielg[this.contaktCells[k].vertikal][
-            this.contaktCells[k].horizont
-          ].iContaktWith.indexOf(this.contaktCells[k]),
+        cellData.iContaktWith.splice(
+          cellData.iContaktWith.indexOf(this.contaktCells[k]),
           1
         );
       }
@@ -41,9 +48,21 @@ Unit.prototype.cellUpdate = function () {
     }
 
     for (let i = 0; i < this.contaktCells.length; i++) {
-      gameFielg[this.contaktCells[i].vertikal][
-        this.contaktCells[i].horizont
-      ].iContaktWith.push(this.contaktCells[i]);
+
+      // this.contaktCells[i].cell !== this.cell.aroundCells[i] ||
+      // gameFielg[this.contaktCells[i].vertikal][
+      //   this.contaktCells[i].horizont
+      // ] !== this.contaktCells[i].cell
+      //  && console.log('BUG - 2') ok
+
+      const cellData = this.cell.contaktCells[i].cell
+
+      //  cellData !== gameFielg[this.contaktCells[i].vertikal][
+      //    this.contaktCells[i].horizont
+      //  ] && console.log('BUG - 2 a')
+
+
+      cellData.iContaktWith.push(this.contaktCells[i]);
     }
 
     if (this.initialization) {

@@ -1,6 +1,6 @@
 const getWay = function (arg, noFree, deep, target, luchnik, special) {
     //console.log("ok");
-    console.log(arg.cell)
+   // console.log(arg.cell)
     let takt = 0;
   
     if (!arg || !arg.cell) {
@@ -35,11 +35,11 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
   
         father = arg.cell; //humansPeople[0];
         //console.log(arg.finish);
-        //basick=gameFielg[father.vertikal][father.horizont];
+        //basick=father;
         //console.log(arg);
         //console.log(father);
-   // gameFielg[father.vertikal][father.horizont] !== father && console.log('getWay - problem') ok
-        gameFielg[father.vertikal][father.horizont].finish = arg.finish;
+    //father !== father && console.log('getWay - problem')
+        father.finish = arg.finish;
   
         //console.log(father); ok
   
@@ -51,7 +51,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
         ) {
           //
   
-          //console.log("pizdez");
+          console.log("pizdez");
   
           arg.way = [];
           arg.target = 0;
@@ -65,15 +65,15 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
           return;
         }
   
-        gameFielg[father.vertikal][father.horizont].g = 0;
-        gameFielg[father.vertikal][father.horizont].getH();
-        gameFielg[father.vertikal][father.horizont].f =
-          gameFielg[father.vertikal][father.horizont].g +
-          gameFielg[father.vertikal][father.horizont].h;
+        father.g = 0;
+        father.getH();
+        father.f =
+          father.g +
+          father.h;
   
         //console.log(father.f);
   
-        vektors.push(gameFielg[father.vertikal][father.horizont]);
+        vektors.push(father);
   
         vektors[0].inUse = false;
         //vektors[0].finish.h=0;
@@ -136,7 +136,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
       //console.log();
       ///*
       if (!basick) {
-        //console.log("polny pizdez!!!!");
+        console.log("polny pizdez!!!!");
   
         arg.finish = 0;
         if (
@@ -145,7 +145,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
           father.finish.vertikal === undefined ||
           father.finish.horizont === undefined
         ) {
-          //console.log("pizdez");
+          console.log("pizdez");
   
           arg.way = [];
           arg.target = 0;
@@ -242,7 +242,7 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
           father.finish.vertikal === undefined ||
           father.finish.horizont === undefined
         ) {
-          //console.log("pizdez");
+          console.log("pizdez");
   
           arg.way = [];
           arg.target = 0;

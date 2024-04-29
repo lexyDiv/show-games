@@ -489,9 +489,7 @@ Obj.prototype.getVektorsSweeme = function (arg, target, unit, luchnik) {
 };
 
 Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
-  if (!gameFielg[this.vertikal] || !gameFielg[this.vertikal][this.horizont]) {
-    return;
-  }
+
 
   /*	
   if(isNaN(this.f)){
@@ -556,7 +554,10 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
         this.iContaktWith[d].father.persolalNumber ===
         unit.finish.unit.persolalNumber
       ) {
-        father.finish = gameFielg[this.vertikal][this.horizont];
+
+       // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 1')
+
+        father.finish = this //gameFielg[this.vertikal][this.horizont];
 
         father.finish.myWay(father.finish);
 
@@ -577,8 +578,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
     //console.log(this.ii_index); pausa=1;
 
     if (index && index <= unit.ii_index) {
-      father.finish = gameFielg[this.vertikal][this.horizont];
-
+      father.finish = this //gameFielg[this.vertikal][this.horizont];
+     // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 2')
       father.finish.myWay(father.finish);
 
       //unit.iCanGet=true;
@@ -600,8 +601,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
         this.iContaktWith[d].father.fatherFraction.union !==
           unit.fatherFraction.union
       ) {
-        father.finish = gameFielg[this.vertikal][this.horizont];
-
+        father.finish = this //gameFielg[this.vertikal][this.horizont];
+       // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 3')
         father.finish.myWay(father.finish);
 
         //console.log("ura");
@@ -611,7 +612,7 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
       }
     }
   }
-
+ // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 4')
   if (
     unit.fatherFraction.control === "comp" &&
     unit.handCell &&
@@ -626,8 +627,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
         50
       ) <= 250
     ) {
-      father.finish = gameFielg[this.vertikal][this.horizont];
-
+      father.finish = this //gameFielg[this.vertikal][this.horizont];
+      //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 5')
       father.finish.myWay(father.finish);
       //unit.ii_saveCell=false;
       //console.log("ura");
@@ -653,8 +654,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
     let x;
     let y;
 
-    let cell = gameFielg[this.vertikal][this.horizont];
-
+    let cell = this //gameFielg[this.vertikal][this.horizont];
+    //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 6')
     if (unit.gabarit === 50) {
       x = cell.x + 25;
       y = cell.y + 25;
@@ -685,8 +686,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
       if (
         this.iContaktWith[d].father.persolalNumber === target.persolalNumber
       ) {
-        father.finish = gameFielg[this.vertikal][this.horizont];
-
+        father.finish = this //gameFielg[this.vertikal][this.horizont];
+        // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 7')
         father.finish.myWay(father.finish);
 
         //console.log("ura");
@@ -710,8 +711,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
     let c = Math.sqrt(a * a + b * b);
 
     if (c <= unit.seeing) {
-      father.finish = gameFielg[this.vertikal][this.horizont];
-
+      father.finish = this //gameFielg[this.vertikal][this.horizont];
+     // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 8')
       father.finish.myWay(father.finish);
 
       //console.log(c+" way");
@@ -726,8 +727,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
       if (
         this.iContaktWith[d].father.persolalNumber === target.persolalNumber
       ) {
-        father.finish = gameFielg[this.vertikal][this.horizont];
-
+        father.finish = this //gameFielg[this.vertikal][this.horizont];
+        //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 9')
         father.finish.myWay(father.finish);
 
         //console.log("ura");
@@ -753,8 +754,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
                 this.iContaktWith[d].father.hpfull) &&
             this.iContaktWith[d].father.hp > 0
           ) {
-            father.finish = gameFielg[this.vertikal][this.horizont];
-
+            father.finish = this //gameFielg[this.vertikal][this.horizont];
+           // gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 10')
             father.finish.myWay(father.finish);
 
             //console.log(c+" way");
@@ -789,7 +790,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
             ) {
               father.unit.potentialTarget = this.iContaktWith[d].father;
 
-              father.finish = gameFielg[this.vertikal][this.horizont];
+              father.finish = this //gameFielg[this.vertikal][this.horizont];
+              //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 11')
               father.finish.myWay(father.finish);
 
               father.unit.potentialWay = father.way;
@@ -808,7 +810,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
             ) {
               father.unit.potentialTarget = this.iContaktWith[d].father;
 
-              father.finish = gameFielg[this.vertikal][this.horizont];
+              father.finish = this //gameFielg[this.vertikal][this.horizont];
+              //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 12')
               father.finish.myWay(father.finish);
 
               father.unit.potentialWay = father.way;
@@ -827,7 +830,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
             ) {
               father.unit.potentialTarget = this.iContaktWith[d].father;
 
-              father.finish = gameFielg[this.vertikal][this.horizont];
+              father.finish = this //gameFielg[this.vertikal][this.horizont];
+              //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 13')
               father.finish.myWay(father.finish);
 
               father.unit.potentialWay = father.way;
@@ -848,7 +852,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
             ) {
               father.unit.potentialTarget = this.iContaktWith[d].father;
 
-              father.finish = gameFielg[this.vertikal][this.horizont];
+              father.finish = this //gameFielg[this.vertikal][this.horizont];
+              //gameFielg[this.vertikal][this.horizont] !== this && console.log('bug - 14')
               father.finish.myWay(father.finish);
 
               father.unit.potentialWay = father.way;
@@ -893,9 +898,10 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
   //left_Up left_
 
   let koof = 0;
-
-  for (let i = this.vertikal - 1; i < this.vertikal - 1 + 3; i++) {
-    for (let k = this.horizont - 1; k < this.horizont - 1 + 3; k++) {
+const testArrey = []
+let index = 0;
+  
+    for (let k = 0; k < this.aroundCells.length; k++) {
       //if(isNaN(this.f)){console.log(this.father.f);};
 
       /*		
@@ -918,14 +924,16 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
     
   */
 
-      let cell;
+      let cell = this.aroundCells[k];
 
-      if (gameFielg[i] && gameFielg[i][k]) {
-        cell = gameFielg[i][k];
-      }
+      // if (gameFielg[i] && gameFielg[i][k]) {
+      //   cell = gameFielg[i][k];
+      //   cell !== this.aroundCells[index] && console.log('bug - 1')
+      //   index ++
+      // }
 
       if (
-        cell &&
+      
         cell.forCheck !== forCheck //||
         //(gameFielg[i]&&gameFielg[i][k]&&isNaN(gameFielg[i][k].h))||
         //(gameFielg[i]&&gameFielg[i][k]&&isNaN(gameFielg[i][k].f))
@@ -986,13 +994,13 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
       if (unit.fly) {
         //console.log("fly");
 
-        for (let v = i - 1; v <= i; v++) {
-          for (let h = k; h <= k + 1; h++) {
-            let dc;
+        for (let v = cell.vertikal - 1; v <= cell.vertikal; v++) {
+          for (let h = cell.horizont; h <= cell.horizont + 1; h++) {
+            let dc = gameFielg[v] && gameFielg[v][h];
 
-            if (gameFielg[v] && gameFielg[v][h]) {
-              dc = gameFielg[v][h];
-            }
+            // if (gameFielg[v] && gameFielg[v][h]) {
+            //   dc = gameFielg[v][h];
+            // }
 
             if (
               dc &&
@@ -1110,7 +1118,7 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
         //koof++;
         //console.log(c2);
 
-        cell.father = gameFielg[this.vertikal][this.horizont];
+        cell.father = this //gameFielg[this.vertikal][this.horizont];
 
         //this.vektors.push(gameFielg[i][k]);
 
@@ -1120,7 +1128,7 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
 
         cell.h = c * 10; //+c2//+v+h;
 
-        cell.f = gameFielg[i][k].g + cell.h;
+        cell.f = cell.g + cell.h;
 
         //gameFielg[i][k].startFinish=[father,father.finish];
 
@@ -1214,7 +1222,7 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
 
           let c = a + b;
 
-          cell.father = gameFielg[this.vertikal][this.horizont];
+          cell.father = this //gameFielg[this.vertikal][this.horizont];
 
           cell.h = c * 10; //+c2//+v+h;
 
@@ -1227,7 +1235,8 @@ Obj.prototype.getVektors = function (arg, target, unit, luchnik) {
       }
       koof++;
     }
-  }
+  
+ // console.log(testArrey)
 };
 
 Obj.prototype.myWay = function (arg) {

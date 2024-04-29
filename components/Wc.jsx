@@ -6,7 +6,7 @@ const Layout = require("./Layout");
 function Wc({ title }) {
   return (
     <Layout title={title}>
-      <script src="https://code.jquery.com/jquery-2.1.0.js" />
+      {/* <script src="https://code.jquery.com/jquery-2.1.0.js" /> */}
       <canvas id="canvas" width="900" height="700" />
       <canvas id="canvas2" width="900" height="700" />
       <canvas id="canvas3" width="900" height="700" />

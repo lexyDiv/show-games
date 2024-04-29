@@ -173,7 +173,11 @@ window.onmouseup = function () {
     }
   };
 
-  $("body").keydown(function (event) {
+const body = document.getElementsByTagName('body')
+
+
+
+function keyDown(event) {
     let kc = event.keyCode;
   
     if (kc === 32) {
@@ -190,17 +194,51 @@ window.onmouseup = function () {
   
     mem_prog(kc);
     //console.log(kc)
-  });
-  
-  $("body").keyup(function (event) {
-    let kcUp = event.keyCode;
-  
-    if (kcUp === 32) {
-      iLoockTo = 0;
+  };
+
+  function keyUp (event) {
+      let kcUp = event.keyCode;
+    
+      if (kcUp === 32) {
+        iLoockTo = 0;
+      }
+    
+      if (kcUp === 17) {
+        mem_active = false;
+      }
     }
+ 
+  window.addEventListener('keydown', keyDown)
+  window.addEventListener('keyup', keyUp)
+
+  // body.keydown(function (event) {
+  //   let kc = event.keyCode;
   
-    if (kcUp === 17) {
-      mem_active = false;
-    }
-  });
+  //   if (kc === 32) {
+  //     iLoockTo = 1;
+  //   }
+  
+  //   if (kc === 13) {
+  //     pausa = 0;
+  //   }
+  
+  //   if (kc === 17) {
+  //     mem_active = true;
+  //   }
+  
+  //   mem_prog(kc);
+  //   //console.log(kc)
+  // });
+  
+  // $("body").keyup(function (event) {
+  //   let kcUp = event.keyCode;
+  
+  //   if (kcUp === 32) {
+  //     iLoockTo = 0;
+  //   }
+  
+  //   if (kcUp === 17) {
+  //     mem_active = false;
+  //   }
+  // });
   
