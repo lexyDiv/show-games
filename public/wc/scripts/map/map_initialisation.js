@@ -102,26 +102,42 @@ const map_initialization = function () {
   for (let i = 0; i < gameFielg.length; i++) {
     for (let k = 0; k < gameFielg[i].length; k++) {
       // console.log("ok");
-       gameFielg[i][k].aroundCells = []
+      const fieldCell = gameFielg[i][k]
+       fieldCell.aroundCells = []
 
       for (let v = i - 1; v <= i + 1; v++) {
         for (let g = k - 1; g <= k + 1; g++) {
           // console.log("ok");
           const cellData = gameFielg[v] && gameFielg[v][g]
-          cellData && gameFielg[i][k].aroundCells.push(cellData);
+          cellData && fieldCell.aroundCells.push(cellData);
           if (cellData && !(i === v && k === g)) {
-            gameFielg[i][k].contact_map_cells.push(cellData);
+            fieldCell.contact_map_cells.push(cellData);
             
 
-            let cell = new SablonObj(g, v, gameFielg[i][k], null, cellData);
+            let cell = new SablonObj(g, v, fieldCell, null, cellData);
 
-            gameFielg[i][k].contaktCells.push(cell);
+            fieldCell.contaktCells.push(cell);
 
-            cell.contaktCellsGetVektors(gameFielg[i][k], "cell");
+            cell.contaktCellsGetVektors(fieldCell, "cell");
             // console.log("ok");
           }
         }
       }
+
+      fieldCell.cellsForUnitCellUpdate = [];
+
+      for (let ver = fieldCell.vertikal - 11; ver <= fieldCell.vertikal + 11; ver++) {
+        for (let hor = fieldCell.horizont - 11; hor <= fieldCell.horizont + 11; hor++) {
+                 
+          const cellForUCU = gameFielg[ver] && gameFielg[ver][hor];
+
+          cellForUCU && fieldCell.cellsForUnitCellUpdate.push(cellForUCU)
+
+        }
+      }
+
+
+
     }
   }
 

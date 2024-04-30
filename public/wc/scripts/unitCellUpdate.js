@@ -66,13 +66,18 @@ Unit.prototype.cellUpdate = function () {
     }
 
     if (this.initialization) {
-      for (let i = this.vertikal - 11; i <= this.vertikal + 11; i++) {
-        for (let k = this.horizont - 11; k <= this.horizont + 11; k++) {
-          let cell;
 
-          if (gameFielg[i] && gameFielg[i][k]) {
-            cell = gameFielg[i][k];
+     // let index = 0
 
+      
+        for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
+
+          const cell = this.cell.cellsForUnitCellUpdate[k];
+
+        
+            
+            // cell !== this.cell.cellsForUnitCellUpdate[index] && console.log('BUG') // ok
+            //   index++
             if (
               cell.dragoon &&
               cell.dragoon.fatherFraction.union !== this.fatherFraction.union &&
@@ -88,7 +93,7 @@ Unit.prototype.cellUpdate = function () {
                   this.cell.unit.active = true;
                 }
 
-                //console.log(gameFielg[i][k].dragoon.fatherFraction.union)
+                //console.log(cell.dragoon.fatherFraction.union)
               }
 
               if (!cell.dragoon.active) {
@@ -106,12 +111,12 @@ Unit.prototype.cellUpdate = function () {
               (cell.unit.unitStatus === "life" ||
                 cell.unit.unitName === "tower" ||
                 (this.warrior && this.fatherFraction.control === "comp")) &&
-              //gameFielg[i][k].unit.fatherFraction.fraction!==this.fatherFraction.fraction
-              //gameFielg[i][k].unit.fatherFraction&&
-              //gameFielg[i][k].unit.fatherFraction.union&&
+              //cell.unit.fatherFraction.fraction!==this.fatherFraction.fraction
+              //cell.unit.fatherFraction&&
+              //cell.unit.fatherFraction.union&&
               !cell.unit.neitral &&
               //&&
-              //(!gameFielg[i][k].unit.type==="oil_platform"||this.iCanGetSweem)
+              //(!cell.unit.type==="oil_platform"||this.iCanGetSweem)
               cell.unit.fatherFraction.union !== this.fatherFraction.union &&
               cell.unit.hp > 0 &&
               cell.unit.cell
@@ -126,8 +131,8 @@ Unit.prototype.cellUpdate = function () {
                   cell.unit.active = true;
                 }
 
-                if (cell.unit.animys.indexOf(this.cell.unit) === -1) {
-                  cell.unit.animys.push(this.cell.unit);
+                if (cell.unit.animys.indexOf(this) === -1) {
+                  cell.unit.animys.push(this);
                 }
               } else if (cell.unit.unitName === "tower") {
                 if (
@@ -138,8 +143,8 @@ Unit.prototype.cellUpdate = function () {
                   cell.unit.fatherFraction.activeBuildings.push(cell.unit);
                 }
 
-                if (cell.unit.animys.indexOf(this.cell.unit) === -1) {
-                  cell.unit.animys.push(this.cell.unit);
+                if (cell.unit.animys.indexOf(this) === -1) {
+                  cell.unit.animys.push(this);
                 }
               }
 
@@ -152,69 +157,71 @@ Unit.prototype.cellUpdate = function () {
                 }
 
                 if (!this.cell.unit.active) {
-                  this.fatherFraction.activeUnits.push(this.cell.unit);
+                  this.fatherFraction.activeUnits.push(this);
                   this.cell.unit.active = true;
                 }
               }
             }
-          }
+          
         }
-      } ////////////////////////////////////////////////////for 1
+       ////////////////////////////////////////////////////for 1
     }
   } else if (this.fly) {
     //console.log("upgrade");
 
-    for (let i = this.vertikal - 11; i <= this.vertikal + 11; i++) {
-      for (let k = this.horizont - 11; k <= this.horizont + 11; k++) {
-        if (gameFielg[i] && gameFielg[i][k]) {
+    
+      for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
+
+        const cell = this.cell.cellsForUnitCellUpdate[k]
+
           if (
-            gameFielg[i][k].dragoon &&
-            gameFielg[i][k].dragoon.fatherFraction.union !==
+            cell.dragoon &&
+            cell.dragoon.fatherFraction.union !==
               this.fatherFraction.union &&
-            gameFielg[i][k].dragoon.hp > 0
+            cell.dragoon.hp > 0
           ) {
-            if (this.animys.indexOf(gameFielg[i][k].dragoon) === -1) {
-              this.animys.push(gameFielg[i][k].dragoon);
+            if (this.animys.indexOf(cell.dragoon) === -1) {
+              this.animys.push(cell.dragoon);
             }
             if (!this.cell.dragoon.active) {
               this.fatherFraction.activeUnits.push(this.cell.dragoon);
               this.cell.dragoon.active = true;
             }
 
-            if (!gameFielg[i][k].dragoon.active) {
-              gameFielg[i][k].dragoon.fatherFraction.activeUnits.push(
-                gameFielg[i][k].dragoon
+            if (!cell.dragoon.active) {
+              cell.dragoon.fatherFraction.activeUnits.push(
+                cell.dragoon
               );
-              gameFielg[i][k].dragoon.active = true;
+              cell.dragoon.active = true;
             }
             if (
-              gameFielg[i][k].dragoon.animys.indexOf(this.cell.dragoon) === -1
+              cell.dragoon.animys.indexOf(this.cell.dragoon) === -1
             ) {
-              gameFielg[i][k].dragoon.animys.push(this.cell.dragoon);
+              cell.dragoon.animys.push(this.cell.dragoon);
             }
           }
 
           if (
-            gameFielg[i][k].unit &&
-            !gameFielg[i][k].unit.neitral &&
-            gameFielg[i][k].unit.fatherFraction.union !==
+            cell.unit &&
+            !cell.unit.neitral &&
+            cell.unit.fatherFraction.union !==
               this.fatherFraction.union &&
-            gameFielg[i][k].unit.hp > 0 &&
-            gameFielg[i][k].unit.cell
+            cell.unit.hp > 0 &&
+            cell.unit.cell
             //&&
             //(
-            //gameFielg[i][k].unit.warrior
+            //cell.unit.warrior
             //||
             //this.fatherFraction.control==="comp"
             //)
           ) {
             if (
-              this.animys.indexOf(gameFielg[i][k].unit) === -1 &&
-              (gameFielg[i][k].unit.warrior ||
+              this.animys.indexOf(cell.unit) === -1 &&
+              (cell.unit.warrior ||
                 this.fatherFraction.control === "comp" ||
-                gameFielg[i][k].unit.unitStatus === "life")
+                cell.unit.unitStatus === "life")
             ) {
-              this.animys.push(gameFielg[i][k].unit);
+              this.animys.push(cell.unit);
               if (!this.cell.dragoon.active) {
                 this.fatherFraction.activeUnits.push(this.cell.dragoon);
                 this.cell.dragoon.active = true;
@@ -222,68 +229,71 @@ Unit.prototype.cellUpdate = function () {
             }
 
             if (
-              gameFielg[i][k].unit.iCanGetFly ||
-              gameFielg[i][k].unit.type === "turtle"
+              cell.unit.iCanGetFly ||
+              cell.unit.type === "turtle"
 
               //||
-              //gameFielg[i][k].unit.warrior
+              //cell.unit.warrior
               /*
   ||
   (
-  gameFielg[i][k].unit.unitName==="tower"
+  cell.unit.unitName==="tower"
   &&
-  gameFielg[i][k].unit.upgrade==="guard"
+  cell.unit.upgrade==="guard"
   )
   */
             ) {
-              if (gameFielg[i][k].unit.unitStatus === "life") {
-                if (!gameFielg[i][k].unit.active) {
-                  gameFielg[i][k].unit.fatherFraction.activeUnits.push(
-                    gameFielg[i][k].unit
+              if (cell.unit.unitStatus === "life") {
+                if (!cell.unit.active) {
+                  cell.unit.fatherFraction.activeUnits.push(
+                    cell.unit
                   );
-                  gameFielg[i][k].unit.active = true;
+                  cell.unit.active = true;
                 }
                 if (
-                  gameFielg[i][k].unit.animys.indexOf(this.cell.dragoon) === -1
+                  cell.unit.animys.indexOf(this.cell.dragoon) === -1
                 ) {
-                  gameFielg[i][k].unit.animys.push(this.cell.dragoon);
+                  cell.unit.animys.push(this.cell.dragoon);
                 }
-              } else if (gameFielg[i][k].unit.unitStatus === "building") {
+              } else if (cell.unit.unitStatus === "building") {
                 if (
-                  gameFielg[i][k].unit.fatherFraction.activeBuildings.indexOf(
-                    gameFielg[i][k].unit
+                  cell.unit.fatherFraction.activeBuildings.indexOf(
+                    cell.unit
                   ) === -1
                 ) {
-                  gameFielg[i][k].unit.fatherFraction.activeBuildings.push(
-                    gameFielg[i][k].unit
+                  cell.unit.fatherFraction.activeBuildings.push(
+                    cell.unit
                   );
                 }
                 if (
-                  gameFielg[i][k].unit.animys.indexOf(this.cell.dragoon) === -1
+                  cell.unit.animys.indexOf(this.cell.dragoon) === -1
                 ) {
-                  gameFielg[i][k].unit.animys.push(this.cell.dragoon);
+                  cell.unit.animys.push(this.cell.dragoon);
                 }
               }
 
               //console.log("fly");
             }
           }
-        }
+        
       }
-    }
+    
   } else if (this.sweeme) {
-    for (let i = this.vertikal - 11; i <= this.vertikal + 11; i++) {
-      for (let k = this.horizont - 11; k <= this.horizont + 11; k++) {
-        if (gameFielg[i] && gameFielg[i][k]) {
+    
+      for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
+
+        const cell = this.cell.cellsForUnitCellUpdate[k]
+
+     
           if (
-            gameFielg[i][k].dragoon &&
-            gameFielg[i][k].dragoon.fatherFraction.union !==
+            cell.dragoon &&
+            cell.dragoon.fatherFraction.union !==
               this.fatherFraction.union &&
-            gameFielg[i][k].dragoon.hp > 0
+            cell.dragoon.hp > 0
           ) {
             if (this.iCanGetFly || this.type === "transport") {
-              if (this.animys.indexOf(gameFielg[i][k].dragoon) === -1) {
-                this.animys.push(gameFielg[i][k].dragoon);
+              if (this.animys.indexOf(cell.dragoon) === -1) {
+                this.animys.push(cell.dragoon);
               }
               if (!this.cell.unit.active) {
                 this.fatherFraction.activeUnits.push(this.cell.unit);
@@ -291,47 +301,47 @@ Unit.prototype.cellUpdate = function () {
               }
             }
 
-            if (!gameFielg[i][k].dragoon.active) {
-              gameFielg[i][k].dragoon.fatherFraction.activeUnits.push(
-                gameFielg[i][k].dragoon
+            if (!cell.dragoon.active) {
+              cell.dragoon.fatherFraction.activeUnits.push(
+                cell.dragoon
               );
-              gameFielg[i][k].dragoon.active = true;
+              cell.dragoon.active = true;
             }
-            if (gameFielg[i][k].dragoon.animys.indexOf(this.cell.unit) === -1) {
-              gameFielg[i][k].dragoon.animys.push(this.cell.unit);
+            if (cell.dragoon.animys.indexOf(this.cell.unit) === -1) {
+              cell.dragoon.animys.push(this.cell.unit);
             }
           }
 
           if (
-            gameFielg[i][k].unit &&
-            !gameFielg[i][k].unit.neitral &&
-            gameFielg[i][k].unit.fatherFraction.union !==
+            cell.unit &&
+            !cell.unit.neitral &&
+            cell.unit.fatherFraction.union !==
               this.fatherFraction.union &&
-            gameFielg[i][k].unit.hp > 0 &&
-            gameFielg[i][k].unit.cell
+            cell.unit.hp > 0 &&
+            cell.unit.cell
             //&&
             //(
-            //gameFielg[i][k].unit.warrior
+            //cell.unit.warrior
             //||
             //this.fatherFraction.control==="comp"
             //)
           ) {
             if (
               (this.warrior || (this.passagers && this.passagers.length)) &&
-              this.animys.indexOf(gameFielg[i][k].unit) === -1 &&
-              (gameFielg[i][k].unit.warrior ||
+              this.animys.indexOf(cell.unit) === -1 &&
+              (cell.unit.warrior ||
                 this.fatherFraction.control === "comp" ||
-                gameFielg[i][k].unit.unitStatus === "life")
+                cell.unit.unitStatus === "life")
               //&&
 
-              //(gameFielg[i][k].unit.iCanGetSweem)
+              //(cell.unit.iCanGetSweem)
 
               //&&
-              //checkAliens_sea(this.cell.unit,gameFielg[i][k].unit)
+              //checkAliens_sea(this.cell.unit,cell.unit)
             ) {
-              //gameFielg[i][k].unit.isMee="ffffffffffffffffff";
+              //cell.unit.isMee="ffffffffffffffffff";
 
-              this.animys.push(gameFielg[i][k].unit);
+              this.animys.push(cell.unit);
 
               if (!this.cell.unit.active) {
                 this.fatherFraction.activeUnits.push(this.cell.unit);
@@ -340,54 +350,54 @@ Unit.prototype.cellUpdate = function () {
             }
 
             if (
-              gameFielg[i][k].unit.iCanGetSweem
+              cell.unit.iCanGetSweem
 
               //||
-              //gameFielg[i][k].unit.warrior
+              //cell.unit.warrior
               /*
   ||
   (
-  gameFielg[i][k].unit.unitName==="tower"
+  cell.unit.unitName==="tower"
   &&
-  gameFielg[i][k].unit.upgrade==="guard"
+  cell.unit.upgrade==="guard"
   )
   */
             ) {
               //console.log("go");
-              if (gameFielg[i][k].unit.unitStatus === "life") {
-                if (!gameFielg[i][k].unit.active) {
-                  gameFielg[i][k].unit.fatherFraction.activeUnits.push(
-                    gameFielg[i][k].unit
+              if (cell.unit.unitStatus === "life") {
+                if (!cell.unit.active) {
+                  cell.unit.fatherFraction.activeUnits.push(
+                    cell.unit
                   );
-                  gameFielg[i][k].unit.active = true;
+                  cell.unit.active = true;
                 }
                 if (
-                  gameFielg[i][k].unit.animys.indexOf(this.cell.unit) === -1
+                  cell.unit.animys.indexOf(this.cell.unit) === -1
                 ) {
-                  gameFielg[i][k].unit.animys.push(this.cell.unit);
+                  cell.unit.animys.push(this.cell.unit);
                 }
-              } else if (gameFielg[i][k].unit.unitStatus === "building") {
+              } else if (cell.unit.unitStatus === "building") {
                 if (
-                  gameFielg[i][k].unit.fatherFraction.activeBuildings.indexOf(
-                    gameFielg[i][k].unit
+                  cell.unit.fatherFraction.activeBuildings.indexOf(
+                    cell.unit
                   ) === -1
                 ) {
-                  gameFielg[i][k].unit.fatherFraction.activeBuildings.push(
-                    gameFielg[i][k].unit
+                  cell.unit.fatherFraction.activeBuildings.push(
+                    cell.unit
                   );
                 }
                 if (
-                  gameFielg[i][k].unit.animys.indexOf(this.cell.unit) === -1
+                  cell.unit.animys.indexOf(this.cell.unit) === -1
                 ) {
-                  gameFielg[i][k].unit.animys.push(this.cell.unit);
+                  cell.unit.animys.push(this.cell.unit);
                 }
               }
 
               //console.log("fly");
             }
           }
-        }
+        
       }
-    }
+    
   }
 };
