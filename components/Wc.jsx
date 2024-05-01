@@ -136,10 +136,31 @@ function Wc({ title }) {
       <script defer src="wc/scripts/unit/drawFly.js" />
       <script defer src="wc/scripts/unit/myTargetCheck.js" />
       <script defer src="wc/scripts/unit/checkGetTarget_sweeme.js" />
+      <script defer src="wc/scripts/unit/checkGetTarget.js" />
+      <script defer src="wc/scripts/unit/checkGetHandTarget_sweeme.js" />
+      <script defer src="wc/scripts/unit/checkGetHandTarget.js" />
+      <script defer src="wc/scripts/unit/checkValideTarget.js" />
+      <script defer src="wc/scripts/unit/getWayToTargetAndCheckGetting.js" />
+      <script defer src="wc/scripts/unit/isBlockedShip.js" />
+      <script defer src="wc/scripts/unit/isBlockedDrag.js" />
+      <script defer src="wc/scripts/unit/checkValideFreeCell.js" />
+      <script defer src="wc/scripts/unit/getOptimalContaktCell.js" />
+      <script defer src="wc/scripts/unit/updateSpeed.js" />
+      <script defer src="wc/scripts/unit/getTownH_or_Lesopilka.js" />
+      <script defer src="wc/scripts/unit/getFightVector.js" />
+      <script defer src="wc/scripts/unit/peonGo.js" />
+      <script defer src="wc/scripts/unit/getFirePoint.js" />
+      <script defer src="wc/scripts/unit/axeInitialisation.js" />
+      <script defer src="wc/scripts/unit/comeWithMee.js" />
+      
 
       <script defer src="wc/scripts/unitProto.js" />
+
+      <script defer src="wc/scripts/dragoonDamage/drawDragDem.js" />
+      <script defer src="wc/scripts/dragoonDamage/prog.js" />
+
       <script defer src="wc/scripts/dragoonDamageProto.js" />
-      <script defer src="wc/scripts/unitProtoDrawUnit.js" />
+      <script defer src="wc/scripts/unit/drawUnit.js" />
       <script defer src="wc/scripts/removeControl.js" />
       <script defer src="wc/scripts/canvas3.js" />
       <script defer src="wc/scripts/getActiveZone.js" />
@@ -150,7 +171,7 @@ function Wc({ title }) {
       <script defer src="wc/scripts/getMyGroupPosition.js" />
       <script defer src="wc/scripts/window.js" />
       <script defer src="wc/scripts/radar/radarProto.js" />
-      <script defer src="wc/scripts/createUnitDopMenu.js" />
+      <script defer src="wc/scripts/unit/menu/createUnitDopMenu.js" />
       <script defer src="wc/scripts/player/playerGroopProg.js" />
       <script defer src="wc/scripts/player/playerGroupDraw.js" />
       <script defer src="wc/scripts/unit/menu/unitDopMenuControl.js" />
@@ -192,15 +213,25 @@ function Wc({ title }) {
       <script defer src="wc/scripts/checkAliens.js" />
       <script defer src="wc/scripts/getDistanceOfLineyka.js" />
 
-      <script defer src="wc/scripts/unitProtoProg.js" />
+      <script defer src="wc/scripts/unit/prog.js" />
+
+      <script defer src="wc/scripts/water_sled/prog.js" />
+      <script defer src="wc/scripts/water_sled/draw.js" />
+
       <script defer src="wc/scripts/waterSledProto.js" />
-      <script defer src="wc/scripts/waterSledCreate.js" />
+
+
+      <script defer src="wc/scripts/water_sled/functions/waterSledCreate.js" />
       <script defer src="wc/scripts/infoAddControl.js" />
       <script defer src="wc/scripts/goodSeaBuildCell.js" />
-      <script defer src="wc/scripts/wellCellForBuilding.js" />
+      <script defer src="wc/scripts/landObj/buildings/wellCellForBuilding.js" />
       <script defer src="wc/scripts/getMiniDistance.js" />
       <script defer src="wc/scripts/activeFreeLandObjectsToProg.js" />
       <script defer src="wc/scripts/isBlocked.js" />
+
+      <script defer src="wc/scripts/axes/draw.js" />
+      <script defer src="wc/scripts/axes/prog.js" />
+
       <script defer src="wc/scripts/axesProto.js" />
       <script defer src="wc/scripts/unitPrice.js" />
       <script defer src="wc/scripts/myJobeTime.js" />
