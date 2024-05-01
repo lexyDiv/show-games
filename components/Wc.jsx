@@ -40,6 +40,10 @@ function Wc({ title }) {
 
       <script defer src="wc/scripts/constructors/DragoonDamage.js" />
       <script defer src="wc/scripts/constructors/Unit.js" />
+      <script defer src="wc/scripts/constructors/extendsUnit/peon.js" />
+
+      <script defer src="wc/scripts/unit/extends/peon/personalProg.js" />
+
       <script defer src="wc/scripts/constructors/Continent.js" />
       <script defer src="wc/scripts/constructors/Sound.js" />
       <script defer src="wc/scripts/constructors/Sea.js" />

@@ -2918,7 +2918,7 @@ LandObj.prototype.prog = function () {
 
           // console.log(this.waitTime);
 
-          const unit = new Unit(
+          const unit = new Peon(
             1,
             0,
             0,
