@@ -1,6 +1,6 @@
 const getWay = function (arg, noFree, deep, target, luchnik, special) {
     //console.log("ok");
-    console.log(arg.cell)
+   // console.log(arg.cell)
     let takt = 0;
   
     if (!arg || !arg.cell) {
@@ -35,45 +35,45 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
   
         father = arg.cell; //humansPeople[0];
         //console.log(arg.finish);
-        //basick=gameFielg[father.vertikal][father.horizont];
+        //basick=father;
         //console.log(arg);
         //console.log(father);
-   // gameFielg[father.vertikal][father.horizont] !== father && console.log('getWay - problem') ok
-        gameFielg[father.vertikal][father.horizont].finish = arg.finish;
+    //father !== father && console.log('getWay - problem')
+        father.finish = arg.finish;
   
         //console.log(father); ok
   
-        if (
-          !father ||
-          !father.finish ||
-          father.finish.vertikal === undefined ||
-          father.finish.horizont === undefined
-        ) {
-          //
+        // if (
+        //   !father ||
+        //   !father.finish ||
+        //   father.finish.vertikal === undefined ||
+        //   father.finish.horizont === undefined
+        // ) {
+        //   //
   
-          //console.log("pizdez");
+        //   console.log("pizdez");
   
-          arg.way = [];
-          arg.target = 0;
-          arg.myJoube = 0;
-          father = 0;
-          vektors = [];
-          allVektors = [];
-          basick = 0;
-          noFree = 0;
+        //   arg.way = [];
+        //   arg.target = 0;
+        //   arg.myJoube = 0;
+        //   father = 0;
+        //   vektors = [];
+        //   allVektors = [];
+        //   basick = 0;
+        //   noFree = 0;
   
-          return;
-        }
+        //   return;
+        // }
   
-        gameFielg[father.vertikal][father.horizont].g = 0;
-        gameFielg[father.vertikal][father.horizont].getH();
-        gameFielg[father.vertikal][father.horizont].f =
-          gameFielg[father.vertikal][father.horizont].g +
-          gameFielg[father.vertikal][father.horizont].h;
+        father.g = 0;
+        father.getH();
+        father.f =
+          father.g +
+          father.h;
   
         //console.log(father.f);
   
-        vektors.push(gameFielg[father.vertikal][father.horizont]);
+        vektors.push(father);
   
         vektors[0].inUse = false;
         //vektors[0].finish.h=0;
@@ -135,44 +135,45 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
   
       //console.log();
       ///*
-      if (!basick) {
-        //console.log("polny pizdez!!!!");
+      // if (!basick) {
+      //   console.log("polny pizdez!!!!");
   
-        arg.finish = 0;
-        if (
-          !father ||
-          !father.finish ||
-          father.finish.vertikal === undefined ||
-          father.finish.horizont === undefined
-        ) {
-          //console.log("pizdez");
+      //   arg.finish = 0;
+      //   if (
+      //     !father ||
+      //     !father.finish ||
+      //     father.finish.vertikal === undefined ||
+      //     father.finish.horizont === undefined
+      //   ) {
+      //     console.log("pizdez");
   
-          arg.way = [];
-          arg.target = 0;
-          arg.myJoube = 0;
-          father = 0;
-          vektors = [];
-          allVektors = [];
-          basick = 0;
-          noFree = 0;
+      //     arg.way = [];
+      //     arg.target = 0;
+      //     arg.myJoube = 0;
+      //     father = 0;
+      //     vektors = [];
+      //     allVektors = [];
+      //     basick = 0;
+      //     noFree = 0;
   
-          return;
-        }
-        father.way = [];
-        father.inUse = false;
-        father.finish.inUse = false;
-        father = 0;
-        vektors = [];
-        allVektors = [];
-        basick = 0;
-        noFree = 0;
+      //     return;
+      //   }
+      //   father.way = [];
+      //   father.inUse = false;
+      //   father.finish.inUse = false;
+      //   father = 0;
+      //   vektors = [];
+      //   allVektors = [];
+      //   basick = 0;
+      //   noFree = 0;
   
-        arg.target = 0;
-        arg.way = [];
-        arg.myJoube = 0;
+      //   arg.target = 0;
+      //   arg.way = [];
+      //   arg.myJoube = 0;
   
-        return;
-      } ///////////////////!!!!!!!!!!!!!!!!!!!!!
+      //   return;
+      // } 
+      ///////////////////!!!!!!!!!!!!!!!!!!!!!
       //*/
   
       if (!arg.sweeme) {
@@ -236,25 +237,25 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
         //father.h=0;
         //father.g=0;
         //father.f=0;
-        if (
-          !father ||
-          !father.finish ||
-          father.finish.vertikal === undefined ||
-          father.finish.horizont === undefined
-        ) {
-          //console.log("pizdez");
+        // if (
+        //   !father ||
+        //   !father.finish ||
+        //   father.finish.vertikal === undefined ||
+        //   father.finish.horizont === undefined
+        // ) {
+        //   console.log("pizdez");
   
-          arg.way = [];
-          arg.target = 0;
-          arg.myJoube = 0;
-          father = 0;
-          vektors = [];
-          allVektors = [];
-          basick = 0;
-          noFree = 0;
+        //   arg.way = [];
+        //   arg.target = 0;
+        //   arg.myJoube = 0;
+        //   father = 0;
+        //   vektors = [];
+        //   allVektors = [];
+        //   basick = 0;
+        //   noFree = 0;
   
-          return;
-        }
+        //   return;
+        // }
         father.way = [];
         father.inUse = false;
         father.finish.inUse = false;

@@ -24,9 +24,9 @@ var ctx3 = canvas3.getContext("2d");
 var width3 = canvas3.width;
 var height3 = canvas3.height;
 
-$("#canvas").css({ position: "absolute", left: 0, top: 0 });
-$("#canvas2").css({ position: "absolute", left: 0, top: 0 });
-$("#canvas3").css({ position: "absolute", left: 0, top: 0 });
+// $("#canvas").css({ position: "absolute", left: 0, top: 0 });
+// $("#canvas2").css({ position: "absolute", left: 0, top: 0 });
+// $("#canvas3").css({ position: "absolute", left: 0, top: 0 });
 
 //glob_deep
 
@@ -167,7 +167,7 @@ let floorGlobalTimer;
 let timer_do_start = 400;
 let wrm = [];
 let test = 0;
-let temp = 1;
+let temp = 30;
 let y_n_magick = false;
 let sounds = [];
 let sounds_fight = [];

@@ -6,7 +6,7 @@ const Layout = require("./Layout");
 function Wc({ title }) {
   return (
     <Layout title={title}>
-      <script src="https://code.jquery.com/jquery-2.1.0.js" />
+      {/* <script src="https://code.jquery.com/jquery-2.1.0.js" /> */}
       <canvas id="canvas" width="900" height="700" />
       <canvas id="canvas2" width="900" height="700" />
       <canvas id="canvas3" width="900" height="700" />
@@ -94,9 +94,11 @@ function Wc({ title }) {
       <script defer src="wc/scripts/map/check_seas.js" />
       <script defer src="wc/scripts/mapInit.js" />
 
-
+      <script defer src="wc/scripts/landObj/buildings/buildingBornAnimysUpdate.js" />
+      <script defer src="wc/scripts/shablon/contaktCellsGetVektors.js" />
+      <script defer src="wc/scripts/landObj/vossal_contacts_moveVectorsInitialization.js" />
       <script defer src="wc/scripts/shablonLand.js" />
-      <script defer src="wc/scripts/unitCellUpdate.js" />
+      <script defer src="wc/scripts/unit/cellUpdate.js" />
       <script defer src="wc/scripts/fractionsCreate.js" />
 
       <script defer src="wc/scripts/obj/progCenterDrawPoint.js" />
@@ -107,8 +109,34 @@ function Wc({ title }) {
       <script defer src="wc/scripts/obj/drawRadar.js" />
       <script defer src="wc/scripts/obj/getVektors_ii.js" />
       <script defer src="wc/scripts/obj/getVektorsSweeme.js" />
+      <script defer src="wc/scripts/obj/getVektors.js" />
+      <script defer src="wc/scripts/obj/myWay.js" />
+      <script defer src="wc/scripts/obj/getH.js" />
       <script defer src="wc/scripts/objProto.js" />
       <script defer src="wc/scripts/landObjProto.js" />
+
+      <script defer src="wc/scripts/unit/createBuilding.js" />
+      <script defer src="wc/scripts/unit/good_cell_for_ship.js" />
+      <script defer src="wc/scripts/unit/getBuildPosition.js" />
+      <script defer src="wc/scripts/unit/getGsp_Vsp.js" />
+      <script defer src="wc/scripts/unit/goWay.js" />
+      <script defer src="wc/scripts/unit/goWayDrag.js" />
+      <script defer src="wc/scripts/unit/goWaySweeme.js" />
+      <script defer src="wc/scripts/unit/cleared_way.js" />
+      <script defer src="wc/scripts/unit/cleared_way_ground.js" />
+      <script defer src="wc/scripts/unit/sea_panick.js" />
+      <script defer src="wc/scripts/unit/ground_panick.js" />
+      <script defer src="wc/scripts/unit/checkNextDragCell.js" />
+      <script defer src="wc/scripts/unit/checkNextSweemeCell.js" />
+      <script defer src="wc/scripts/unit/magick_ok.js" />
+      <script defer src="wc/scripts/unit/panick_peoples.js" />
+      <script defer src="wc/scripts/unit/getMy_landing_cell.js" />
+      <script defer src="wc/scripts/unit/checkGoodLandingCell.js" />
+      <script defer src="wc/scripts/unit/checkAntyMoveVektors.js" />
+      <script defer src="wc/scripts/unit/drawFly.js" />
+      <script defer src="wc/scripts/unit/myTargetCheck.js" />
+      <script defer src="wc/scripts/unit/checkGetTarget_sweeme.js" />
+
       <script defer src="wc/scripts/unitProto.js" />
       <script defer src="wc/scripts/dragoonDamageProto.js" />
       <script defer src="wc/scripts/unitProtoDrawUnit.js" />
@@ -121,16 +149,16 @@ function Wc({ title }) {
       <script defer src="wc/scripts/dragoonsGroopPosition.js" />
       <script defer src="wc/scripts/getMyGroupPosition.js" />
       <script defer src="wc/scripts/window.js" />
-      <script defer src="wc/scripts/radarProto.js" />
+      <script defer src="wc/scripts/radar/radarProto.js" />
       <script defer src="wc/scripts/createUnitDopMenu.js" />
-      <script defer src="wc/scripts/playerGroopProg.js" />
-      <script defer src="wc/scripts/playerGroupDraw.js" />
-      <script defer src="wc/scripts/unitDopMenuControl.js" />
-      <script defer src="wc/scripts/unitMenuDraw.js" />
-      <script defer src="wc/scripts/unitMenu.js" />
+      <script defer src="wc/scripts/player/playerGroopProg.js" />
+      <script defer src="wc/scripts/player/playerGroupDraw.js" />
+      <script defer src="wc/scripts/unit/menu/unitDopMenuControl.js" />
+      <script defer src="wc/scripts/unit/menu/unitMenuDraw.js" />
+      <script defer src="wc/scripts/unit/menu/unitMenu.js" />
       <script defer src="wc/scripts/infoGamePanel.js" />
       <script defer src="wc/scripts/setInterval.js" />
-      <script defer src="wc/scripts/playerSelectControl.js" />
+      <script defer src="wc/scripts/player/playerSelectControl.js" />
       <script defer src="wc/scripts/getWay.js" />
       <script defer src="wc/scripts/getBastH.js" />
       <script defer src="wc/scripts/getBastVectors.js" />
@@ -163,6 +191,7 @@ function Wc({ title }) {
       <script defer src="wc/scripts/checkAlienSea.js" />
       <script defer src="wc/scripts/checkAliens.js" />
       <script defer src="wc/scripts/getDistanceOfLineyka.js" />
+
       <script defer src="wc/scripts/unitProtoProg.js" />
       <script defer src="wc/scripts/waterSledProto.js" />
       <script defer src="wc/scripts/waterSledCreate.js" />
@@ -176,7 +205,7 @@ function Wc({ title }) {
       <script defer src="wc/scripts/unitPrice.js" />
       <script defer src="wc/scripts/myJobeTime.js" />
       <script defer src="wc/scripts/hpGraf.js" />
-      <script defer src="wc/scripts/pausaMenu.js" />
+      <script defer src="wc/scripts/title_menu/pausaMenu.js" />
       <script defer src="wc/scripts/inPausaMenu.js" />
       <script defer src="wc/scripts/inPausaMenuObjInCreate.js" />
       <script defer src="wc/scripts/drawAlarms.js" />
