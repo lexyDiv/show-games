@@ -167,7 +167,7 @@ let floorGlobalTimer;
 let timer_do_start = 400;
 let wrm = [];
 let test = 0;
-let temp = 30;
+let temp = 3;
 let y_n_magick = false;
 let sounds = [];
 let sounds_fight = [];
