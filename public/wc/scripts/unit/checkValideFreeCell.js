@@ -11,28 +11,31 @@ Unit.prototype.checkValideFreeCell = function () {
       this.way[this.way.length - 1].vertikal === this.vertikal - 1
       && this.way[this.way.length - 1].horizont === this.horizont - 1
     ) {
+      const cell_1 = gameFielg[this.vertikal - 1]
+      && gameFielg[this.vertikal - 1][this.horizont];
+      const cell_2 = gameFielg[this.vertikal]
+      && gameFielg[this.vertikal][this.horizont - 1];
+
       if (
-        (gameFielg[this.vertikal - 1]
-          && gameFielg[this.vertikal - 1][this.horizont]
-          && gameFielg[this.vertikal - 1][this.horizont].unit
-          && gameFielg[this.vertikal - 1][this.horizont].unit.cell
-          && gameFielg[this.vertikal - 1][this.horizont].unit.gabarit === 50
-          && gameFielg[this.vertikal - 1][this.horizont].unit.unitStatus
+        (cell_1
+          && cell_1.unit
+          && cell_1.unit.cell
+          && cell_1.unit.gabarit === 50
+          && cell_1.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal - 1][this.horizont].unit.hotCell.vertikal
+          && cell_1.unit.hotCell.vertikal
             === this.vertikal
-          && gameFielg[this.vertikal - 1][this.horizont].unit.hotCell.horizont
+          && cell_1.unit.hotCell.horizont
             === this.horizont - 1)
-        || (gameFielg[this.vertikal]
-          && gameFielg[this.vertikal][this.horizont - 1]
-          && gameFielg[this.vertikal][this.horizont - 1].unit
-          && gameFielg[this.vertikal][this.horizont - 1].unit.cell
-          && gameFielg[this.vertikal][this.horizont - 1].unit.gabarit === 50
-          && gameFielg[this.vertikal][this.horizont - 1].unit.unitStatus
+        || (cell_2
+          && cell_2.unit
+          && cell_2.unit.cell
+          && cell_2.unit.gabarit === 50
+          && cell_2.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal][this.horizont - 1].unit.hotCell.vertikal
+          && cell_2.unit.hotCell.vertikal
             === this.vertikal - 1
-          && gameFielg[this.vertikal][this.horizont - 1].unit.hotCell.horizont
+          && cell_2.unit.hotCell.horizont
             === this.horizont)
       ) {
         return false;
@@ -41,28 +44,30 @@ Unit.prototype.checkValideFreeCell = function () {
       this.way[this.way.length - 1].vertikal === this.vertikal - 1
       && this.way[this.way.length - 1].horizont === this.horizont + 1
     ) {
+      const cell_1 = gameFielg[this.vertikal - 1]
+      && gameFielg[this.vertikal - 1][this.horizont];
+      const cell_3 = gameFielg[this.vertikal] && gameFielg[this.vertikal][this.horizont + 1];
+
       if (
-        (gameFielg[this.vertikal - 1]
-          && gameFielg[this.vertikal - 1][this.horizont]
-          && gameFielg[this.vertikal - 1][this.horizont].unit
-          && gameFielg[this.vertikal - 1][this.horizont].unit.cell
-          && gameFielg[this.vertikal - 1][this.horizont].unit.gabarit === 50
-          && gameFielg[this.vertikal - 1][this.horizont].unit.unitStatus
+        (cell_1
+          && cell_1.unit
+          && cell_1.unit.cell
+          && cell_1.unit.gabarit === 50
+          && cell_1.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal - 1][this.horizont].unit.hotCell.vertikal
+          && cell_1.unit.hotCell.vertikal
             === this.vertikal
-          && gameFielg[this.vertikal - 1][this.horizont].unit.hotCell.horizont
+          && cell_1.unit.hotCell.horizont
             === this.horizont + 1)
-        || (gameFielg[this.vertikal]
-          && gameFielg[this.vertikal][this.horizont + 1]
-          && gameFielg[this.vertikal][this.horizont + 1].unit
-          && gameFielg[this.vertikal][this.horizont + 1].unit.cell
-          && gameFielg[this.vertikal][this.horizont + 1].unit.gabarit === 50
-          && gameFielg[this.vertikal][this.horizont + 1].unit.unitStatus
+        || (cell_3
+          && cell_3.unit
+          && cell_3.unit.cell
+          && cell_3.unit.gabarit === 50
+          && cell_3.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal][this.horizont + 1].unit.hotCell.vertikal
+          && cell_3.unit.hotCell.vertikal
             === this.vertikal - 1
-          && gameFielg[this.vertikal][this.horizont + 1].unit.hotCell.horizont
+          && cell_3.unit.hotCell.horizont
             === this.horizont)
       ) {
         return false;
@@ -71,28 +76,31 @@ Unit.prototype.checkValideFreeCell = function () {
       this.way[this.way.length - 1].vertikal === this.vertikal + 1
       && this.way[this.way.length - 1].horizont === this.horizont - 1
     ) {
+      const cell_2 = gameFielg[this.vertikal]
+      && gameFielg[this.vertikal][this.horizont - 1];
+      const cell_4 = gameFielg[this.vertikal + 1]
+      && gameFielg[this.vertikal + 1][this.horizont];
+
       if (
-        (gameFielg[this.vertikal]
-          && gameFielg[this.vertikal][this.horizont - 1]
-          && gameFielg[this.vertikal][this.horizont - 1].unit
-          && gameFielg[this.vertikal][this.horizont - 1].unit.cell
-          && gameFielg[this.vertikal][this.horizont - 1].unit.gabarit === 50
-          && gameFielg[this.vertikal][this.horizont - 1].unit.unitStatus
+        (cell_2
+          && cell_2.unit
+          && cell_2.unit.cell
+          && cell_2.unit.gabarit === 50
+          && cell_2.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal][this.horizont - 1].unit.hotCell.vertikal
+          && cell_2.unit.hotCell.vertikal
             === this.vertikal + 1
-          && gameFielg[this.vertikal][this.horizont - 1].unit.hotCell.horizont
+          && cell_2.unit.hotCell.horizont
             === this.horizont)
-        || (gameFielg[this.vertikal + 1]
-          && gameFielg[this.vertikal + 1][this.horizont]
-          && gameFielg[this.vertikal + 1][this.horizont].unit
-          && gameFielg[this.vertikal + 1][this.horizont].unit.cell
-          && gameFielg[this.vertikal + 1][this.horizont].unit.gabarit === 50
-          && gameFielg[this.vertikal + 1][this.horizont].unit.unitStatus
+        || (cell_4
+          && cell_4.unit
+          && cell_4.unit.cell
+          && cell_4.unit.gabarit === 50
+          && cell_4.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal + 1][this.horizont].unit.hotCell.vertikal
+          && cell_4.unit.hotCell.vertikal
             === this.vertikal
-          && gameFielg[this.vertikal + 1][this.horizont].unit.hotCell.horizont
+          && cell_4.unit.hotCell.horizont
             === this.horizont - 1)
       ) {
         return false;
@@ -101,28 +109,30 @@ Unit.prototype.checkValideFreeCell = function () {
       this.way[this.way.length - 1].vertikal === this.vertikal + 1
       && this.way[this.way.length - 1].horizont === this.horizont + 1
     ) {
+      const cell_3 = gameFielg[this.vertikal] && gameFielg[this.vertikal][this.horizont + 1];
+      const cell_4 = gameFielg[this.vertikal + 1]
+      && gameFielg[this.vertikal + 1][this.horizont];
+
       if (
-        (gameFielg[this.vertikal + 1]
-          && gameFielg[this.vertikal + 1][this.horizont]
-          && gameFielg[this.vertikal + 1][this.horizont].unit
-          && gameFielg[this.vertikal + 1][this.horizont].unit.cell
-          && gameFielg[this.vertikal + 1][this.horizont].unit.gabarit === 50
-          && gameFielg[this.vertikal + 1][this.horizont].unit.unitStatus
+        (cell_4
+          && cell_4.unit
+          && cell_4.unit.cell
+          && cell_4.unit.gabarit === 50
+          && cell_4.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal + 1][this.horizont].unit.hotCell.vertikal
+          && cell_4.unit.hotCell.vertikal
             === this.vertikal
-          && gameFielg[this.vertikal + 1][this.horizont].unit.hotCell.horizont
+          && cell_4.unit.hotCell.horizont
             === this.horizont + 1)
-        || (gameFielg[this.vertikal]
-          && gameFielg[this.vertikal][this.horizont + 1]
-          && gameFielg[this.vertikal][this.horizont + 1].unit
-          && gameFielg[this.vertikal][this.horizont + 1].unit.cell
-          && gameFielg[this.vertikal][this.horizont + 1].unit.gabarit === 50
-          && gameFielg[this.vertikal][this.horizont + 1].unit.unitStatus
+        || (cell_3
+          && cell_3.unit
+          && cell_3.unit.cell
+          && cell_3.unit.gabarit === 50
+          && cell_3.unit.unitStatus
             === 'life'
-          && gameFielg[this.vertikal][this.horizont + 1].unit.hotCell.vertikal
+          && cell_3.unit.hotCell.vertikal
             === this.vertikal + 1
-          && gameFielg[this.vertikal][this.horizont + 1].unit.hotCell.horizont
+          && cell_3.unit.hotCell.horizont
             === this.horizont)
       ) {
         return false;
