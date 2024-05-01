@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 Unit.prototype.checkGetTarget = function () {
   if (this.cell) {
     if (
