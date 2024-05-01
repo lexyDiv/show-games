@@ -14,6 +14,8 @@ Unit.prototype.drawFly = function () {
 
       let volume = (450 - dis) / 450;
 
+
+      
       //console.log(volume); pausa=1;
       if (volume < 0) {
         volume = 0;
