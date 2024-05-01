@@ -6,7 +6,7 @@
 /* eslint-disable func-names */
 
 const select_sound_fight = function (unit, sound_type, volume) {
-  if (volume <= 0 || !volume || volume !== volume || sounds_fight.length >= 18) {
+  if (volume <= 0 || !volume || volume !== volume) {
     return;
   }
 

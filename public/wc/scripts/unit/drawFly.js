@@ -1,7 +1,7 @@
 Unit.prototype.drawFly = function () {
     ////////////////////////////////	SOUND
   
-    if (sounds_fly.length + sounds_fight.length < 35) {
+    if (sounds_fly.length + sounds_fight.length < 30) {
       if (this.tyuk) {
         let dis = get_distanse_on_lineyka(
           this.cell,
