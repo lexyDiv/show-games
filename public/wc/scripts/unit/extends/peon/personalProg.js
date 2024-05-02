@@ -9,7 +9,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
 
-Peon.prototype.personalProgPeon = function (arg) {
+Unit.prototype.personalProgPeon = function (arg) {
   // cellUpdate
 
   // console.log(this.target);

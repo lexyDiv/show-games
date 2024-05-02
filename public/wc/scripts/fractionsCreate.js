@@ -34,8 +34,8 @@ const fractionsCrate = function () {
 
       fr.createShablon = JSON.parse(JSON.stringify(f.createShablon));
 
-      fr.gold = 1500000;
-      fr.wood = 1500000;
+      fr.gold = 5000;
+      fr.wood = 3000;
       fr.oil = 1000;
 
       fractions.push(fr);

@@ -1,3 +1,8 @@
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-const */
+/* eslint-disable camelcase */
 //gameFielg timer_do_start
 
 document.body.style.cursor = "none";
@@ -167,7 +172,7 @@ let floorGlobalTimer;
 let timer_do_start = 400;
 let wrm = [];
 let test = 0;
-let temp = 3;
+let temp = 30;
 let y_n_magick = false;
 let sounds = [];
 let sounds_fight = [];
