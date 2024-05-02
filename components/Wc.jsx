@@ -43,6 +43,17 @@ function Wc({ title }) {
       <script defer src="wc/scripts/constructors/extendsUnit/peon.js" />
 
       <script defer src="wc/scripts/unit/extends/peon/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/swordMan/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/mag/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/turtle/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/linkor/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/distroer/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/tanker/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/transport/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/dragoon/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/rizar/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/ballista/personalProg.js" />
+      <script defer src="wc/scripts/unit/extends/elf/personalProg.js" />
 
       <script defer src="wc/scripts/constructors/Continent.js" />
       <script defer src="wc/scripts/constructors/Sound.js" />
