@@ -20,7 +20,7 @@ const fractionsCrate = function () {
         f.name,
         f.control,
         [
-          new Unit(1, f.x, f.y, 2, f.name, f.nation),
+          new Peon(1, f.x, f.y, 2, f.name, f.nation),
           // new Unit( "rizar",f.x,f.y+1,5,f.name,f.nation),
           // new Unit(3 ,f.x,f.y+2,2,f.name,f.nation),
         ],

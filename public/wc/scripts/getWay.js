@@ -48,27 +48,27 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
 
       // console.log(father); ok
 
-      // if (
-      //   !father ||
-      //   !father.finish ||
-      //   father.finish.vertikal === undefined ||
-      //   father.finish.horizont === undefined
-      // ) {
-      //   //
+      if (
+        !father
+        || !father.finish
+        || father.finish.vertikal === undefined
+        || father.finish.horizont === undefined
+      ) {
+        //
 
-      //   console.log("pizdez");
+        // console.log("pizdez");
 
-      //   arg.way = [];
-      //   arg.target = 0;
-      //   arg.myJoube = 0;
-      //   father = 0;
-      //   vektors = [];
-      //   allVektors = [];
-      //   basick = 0;
-      //   noFree = 0;
+        arg.way = [];
+        arg.target = 0;
+        arg.myJoube = 0;
+        father = 0;
+        vektors = [];
+        allVektors = [];
+        basick = 0;
+        noFree = 0;
 
-      //   return;
-      // }
+        return;
+      }
 
       father.g = 0;
       father.getH();
@@ -138,44 +138,44 @@ const getWay = function (arg, noFree, deep, target, luchnik, special) {
 
     // console.log();
     /// *
-    // if (!basick) {
-    //   console.log("polny pizdez!!!!");
+    if (!basick) {
+      // console.log("polny pizdez!!!!");
 
-    //   arg.finish = 0;
-    //   if (
-    //     !father ||
-    //     !father.finish ||
-    //     father.finish.vertikal === undefined ||
-    //     father.finish.horizont === undefined
-    //   ) {
-    //     console.log("pizdez");
+      arg.finish = 0;
+      if (
+        !father
+        || !father.finish
+        || father.finish.vertikal === undefined
+        || father.finish.horizont === undefined
+      ) {
+        // console.log("pizdez");
 
-    //     arg.way = [];
-    //     arg.target = 0;
-    //     arg.myJoube = 0;
-    //     father = 0;
-    //     vektors = [];
-    //     allVektors = [];
-    //     basick = 0;
-    //     noFree = 0;
+        arg.way = [];
+        arg.target = 0;
+        arg.myJoube = 0;
+        father = 0;
+        vektors = [];
+        allVektors = [];
+        basick = 0;
+        noFree = 0;
 
-    //     return;
-    //   }
-    //   father.way = [];
-    //   father.inUse = false;
-    //   father.finish.inUse = false;
-    //   father = 0;
-    //   vektors = [];
-    //   allVektors = [];
-    //   basick = 0;
-    //   noFree = 0;
+        return;
+      }
+      father.way = [];
+      father.inUse = false;
+      father.finish.inUse = false;
+      father = 0;
+      vektors = [];
+      allVektors = [];
+      basick = 0;
+      noFree = 0;
 
-    //   arg.target = 0;
-    //   arg.way = [];
-    //   arg.myJoube = 0;
+      arg.target = 0;
+      arg.way = [];
+      arg.myJoube = 0;
 
-    //   return;
-    // }
+      return;
+    }
     /// ////////////////!!!!!!!!!!!!!!!!!!!!!
     //* /
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-plusplus */
 /* eslint-disable camelcase */
 /* eslint-disable func-names */
@@ -68,11 +69,7 @@ Unit.prototype.cellUpdate = function () {
     if (this.initialization) {
       // let index = 0
 
-      for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
-        const cell = this.cell.cellsForUnitCellUpdate[k];
-
-        // cell !== this.cell.cellsForUnitCellUpdate[index] && console.log('BUG') // ok
-        //   index++
+      this.cell.cellsForUnitCellUpdate.forEach((cells) => cells.forEach((cell) => {
         if (
           cell.dragoon
           && cell.dragoon.fatherFraction.union !== this.fatherFraction.union
@@ -155,15 +152,13 @@ Unit.prototype.cellUpdate = function () {
             }
           }
         }
-      }
+      }));
       /// /////////////////////////////////////////////////for 1
     }
   } else if (this.fly) {
     // console.log("upgrade");
 
-    for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
-      const cell = this.cell.cellsForUnitCellUpdate[k];
-
+    this.cell.cellsForUnitCellUpdate.forEach((cells) => cells.forEach((cell) => {
       if (
         cell.dragoon
         && cell.dragoon.fatherFraction.union !== this.fatherFraction.union
@@ -249,11 +244,9 @@ Unit.prototype.cellUpdate = function () {
           // console.log("fly");
         }
       }
-    }
+    }));
   } else if (this.sweeme) {
-    for (let k = 0; k < this.cell.cellsForUnitCellUpdate.length; k++) {
-      const cell = this.cell.cellsForUnitCellUpdate[k];
-
+    this.cell.cellsForUnitCellUpdate.forEach((cells) => cells.forEach((cell) => {
       if (
         cell.dragoon
         && cell.dragoon.fatherFraction.union !== this.fatherFraction.union
@@ -351,6 +344,6 @@ Unit.prototype.cellUpdate = function () {
           // console.log("fly");
         }
       }
-    }
+    }));
   }
 };

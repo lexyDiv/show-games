@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable quotes */
 /* eslint-disable no-else-return */
 /* eslint-disable consistent-return */
@@ -102,17 +103,16 @@ const map_initialization = function () {
   for (let i = 0; i < gameFielg.length; i++) {
     for (let k = 0; k < gameFielg[i].length; k++) {
       // console.log("ok");
-      const fieldCell = gameFielg[i][k]
-       fieldCell.aroundCells = []
+      const fieldCell = gameFielg[i][k];
+      fieldCell.aroundCells = [];
 
       for (let v = i - 1; v <= i + 1; v++) {
         for (let g = k - 1; g <= k + 1; g++) {
           // console.log("ok");
-          const cellData = gameFielg[v] && gameFielg[v][g]
+          const cellData = gameFielg[v] && gameFielg[v][g];
           cellData && fieldCell.aroundCells.push(cellData);
           if (cellData && !(i === v && k === g)) {
             fieldCell.contact_map_cells.push(cellData);
-            
 
             let cell = new SablonObj(g, v, fieldCell, null, cellData);
 
@@ -125,27 +125,19 @@ const map_initialization = function () {
       }
 
       fieldCell.cellsForUnitCellUpdate = [];
-
+      
       for (let ver = fieldCell.vertikal - 11; ver <= fieldCell.vertikal + 11; ver++) {
+        fieldCell.cellsForUnitCellUpdate.push([]);
         for (let hor = fieldCell.horizont - 11; hor <= fieldCell.horizont + 11; hor++) {
-                 
           const cellForUCU = gameFielg[ver] && gameFielg[ver][hor];
 
-          cellForUCU && fieldCell.cellsForUnitCellUpdate.push(cellForUCU)
-
+          if (cellForUCU) {
+            fieldCell.cellsForUnitCellUpdate[fieldCell.cellsForUnitCellUpdate.length - 1].push(cellForUCU);
+          }
         }
       }
-
-
-
     }
   }
-
-  
-
-
-
-  
 
   /// /////////////////////////////////////////////////////////////////////////////////////////////
 
