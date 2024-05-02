@@ -6,7 +6,7 @@ const Layout = require("./Layout");
 function Wc({ title }) {
   return (
     <Layout title={title}>
-      {/* <script src="https://code.jquery.com/jquery-2.1.0.js" /> */}
+
       <canvas id="canvas" width="900" height="700" />
       <canvas id="canvas2" width="900" height="700" />
       <canvas id="canvas3" width="900" height="700" />
@@ -167,7 +167,6 @@ function Wc({ title }) {
       <script defer src="wc/scripts/unit/getFirePoint.js" />
       <script defer src="wc/scripts/unit/axeInitialisation.js" />
       <script defer src="wc/scripts/unit/comeWithMee.js" />
-      
 
       <script defer src="wc/scripts/unitProto.js" />
 
@@ -234,7 +233,6 @@ function Wc({ title }) {
       <script defer src="wc/scripts/water_sled/draw.js" />
 
       <script defer src="wc/scripts/waterSledProto.js" />
-
 
       <script defer src="wc/scripts/water_sled/functions/waterSledCreate.js" />
       <script defer src="wc/scripts/infoAddControl.js" />
