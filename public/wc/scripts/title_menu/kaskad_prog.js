@@ -44,8 +44,8 @@ const kaskad_prog = function (dx, dy) {
 
   if (click_up && kaskad_key) {
     if (kaskad_key.father.type === 's') {
-      season = kaskad_key.txt;
-      kaskad_key.father.txt = season;
+      // season = kaskad_key.txt;
+      // kaskad_key.father.txt = season;
     } else if (kaskad_key.father.type === 'nation') {
       if (kaskad_key.txt !== 'None') {
         // console.log(kaskad_key.father.father.position);
