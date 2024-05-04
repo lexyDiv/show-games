@@ -31,438 +31,438 @@ import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/th
 
 /// /////////////
 const titleBack = new Image();
-titleBack.src = 'boulder/title.jpg';
+titleBack.src = 'title.jpg';
 
 const design = new Image();
-design.src = 'boulder/design.png';
+design.src = 'design.png';
 
 const stone3d = new Image();
-stone3d.src = 'boulder/stone3d.png';
+stone3d.src = 'stone3d.png';
 
 const ground3d = new Image();
-ground3d.src = 'boulder/ground3d.png';
+ground3d.src = 'ground3d.png';
 
 const pressfor = new Image();
-pressfor.src = 'boulder/pressfor.png';
+pressfor.src = 'pressfor.png';
 
 const pressfor2 = new Image();
-pressfor2.src = 'boulder/pressfor2.png';
+pressfor2.src = 'pressfor2.png';
 
 const mail = new Image();
-mail.src = 'boulder/mail.png';
+mail.src = 'mail.png';
 
 const zaplatka2 = new Image();
-zaplatka2.src = 'boulder/zaplatka2.png';
+zaplatka2.src = 'zaplatka2.png';
 
 const zaplatka = new Image();
-zaplatka.src = 'boulder/zaplatka.png';
+zaplatka.src = 'zaplatka.png';
 
 const finishostrov = new Image();
-finishostrov.src = 'boulder/finishostrov.png';
+finishostrov.src = 'finishostrov.png';
 
 const finishzentr = new Image();
-finishzentr.src = 'boulder/finishzentr.png';
+finishzentr.src = 'finishzentr.png';
 
 const kucha = new Image();
-kucha.src = 'boulder/kucha.png';
+kucha.src = 'kucha.png';
 
 const oneup = new Image();
-oneup.src = 'boulder/oneup.png';
+oneup.src = 'oneup.png';
 
 const zastamezentr = new Image();
-zastamezentr.src = 'boulder/zastamezentr.png';
+zastamezentr.src = 'zastamezentr.png';
 
 const zastavsher = new Image();
-zastavsher.src = 'boulder/zastavsher.png';
+zastavsher.src = 'zastavsher.png';
 
 const zastavszentr = new Image();
-zastavszentr.src = 'boulder/zastavszentr.png';
+zastavszentr.src = 'zastavszentr.png';
 
 const puz = new Image();
-puz.src = 'boulder/puz.png';
+puz.src = 'puz.png';
 
 const zastokezentr = new Image();
-zastokezentr.src = 'boulder/zastokezentr.png';
+zastokezentr.src = 'zastokezentr.png';
 
 const zastokeher = new Image();
-zastokeher.src = 'boulder/zastokeher.png';
+zastokeher.src = 'zastokeher.png';
 
 const zastafrher = new Image();
-zastafrher.src = 'boulder/zastafrher.png';
+zastafrher.src = 'zastafrher.png';
 
 const scorpion = new Image();
-scorpion.src = 'boulder/scorpion.png';
+scorpion.src = 'scorpion.png';
 
 const zastafrzentr = new Image();
-zastafrzentr.src = 'boulder/zastafrzentr.png';
+zastafrzentr.src = 'zastafrzentr.png';
 
 const zastledher = new Image();
-zastledher.src = 'boulder/zastledher.png';
+zastledher.src = 'zastledher.png';
 
 const ledsany = new Image();
-ledsany.src = 'boulder/ledsany.png';
+ledsany.src = 'ledsany.png';
 
 const zastledzentr = new Image();
-zastledzentr.src = 'boulder/zastledzentr.png';
+zastledzentr.src = 'zastledzentr.png';
 
 const zasther = new Image();
-zasther.src = 'boulder/zasther.png';
+zasther.src = 'zasther.png';
 
 const zastsamol = new Image();
-zastsamol.src = 'boulder/zastsamol.png';
+zastsamol.src = 'zastsamol.png';
 
 const zast1zentr = new Image();
-zast1zentr.src = 'boulder/zast1zentr.png';
+zast1zentr.src = 'zast1zentr.png';
 
 const zast1 = new Image();
-zast1.src = 'boulder/zast1.png';
+zast1.src = 'zast1.png';
 
 /// ///////////////////////////////////////////////////////////////////////////
 
 const ame = new Image();
-ame.src = 'boulder/ame.png';
+ame.src = 'ame.png';
 
 const amefon = new Image();
-amefon.src = 'boulder/amefon.png';
+amefon.src = 'amefon.png';
 
 const amechudo = new Image();
-amechudo.src = 'boulder/amechudo.png';
+amechudo.src = 'amechudo.png';
 
 const amechudoalm = new Image();
-amechudoalm.src = 'boulder/amechudoalm.png';
+amechudoalm.src = 'amechudoalm.png';
 
 const avsfon = new Image();
-avsfon.src = 'boulder/avsfon.png';
+avsfon.src = 'avsfon.png';
 
 const avsstone = new Image();
-avsstone.src = 'boulder/avsstone.png';
+avsstone.src = 'avsstone.png';
 
 const avs = new Image();
-avs.src = 'boulder/avs.png';
+avs.src = 'avs.png';
 
 const avschudoalm = new Image();
-avschudoalm.src = 'boulder/avschudoalm.png';
+avschudoalm.src = 'avschudoalm.png';
 
 const avschudo = new Image();
-avschudo.src = 'boulder/avschudo.png';
+avschudo.src = 'avschudo.png';
 
 const avskirpich = new Image();
-avskirpich.src = 'boulder/avskirpich.png';
+avskirpich.src = 'avskirpich.png';
 
 const okefon = new Image();
-okefon.src = 'boulder/okefon.png';
+okefon.src = 'okefon.png';
 
 const okegolov = new Image();
-okegolov.src = 'boulder/okegolov.png';
+okegolov.src = 'okegolov.png';
 
 const oke = new Image();
-oke.src = 'boulder/oke.png';
+oke.src = 'oke.png';
 
 const okechudoalm = new Image();
-okechudoalm.src = 'boulder/okechudoalm.png';
+okechudoalm.src = 'okechudoalm.png';
 
 const okechudo = new Image();
-okechudo.src = 'boulder/okechudo.png';
+okechudo.src = 'okechudo.png';
 
 const afrchudo = new Image();
-afrchudo.src = 'boulder/afrchudo.png';
+afrchudo.src = 'afrchudo.png';
 
 const afrfon = new Image();
-afrfon.src = 'boulder/afrfon.png';
+afrfon.src = 'afrfon.png';
 
 const afr = new Image();
-afr.src = 'boulder/afr.png';
+afr.src = 'afr.png';
 
 const afrkirpich = new Image();
-afrkirpich.src = 'boulder/afrkirpich.png';
+afrkirpich.src = 'afrkirpich.png';
 
 const afrstone = new Image();
-afrstone.src = 'boulder/afrstone.png';
+afrstone.src = 'afrstone.png';
 
 const ledmioba = new Image();
-ledmioba.src = 'boulder/ledmioba.png';
+ledmioba.src = 'ledmioba.png';
 
 const ledchudo = new Image();
-ledchudo.src = 'boulder/ledchudo.png';
+ledchudo.src = 'ledchudo.png';
 
 const ledchetverka = new Image();
-ledchetverka.src = 'boulder/ledchetverka.png';
+ledchetverka.src = 'ledchetverka.png';
 
 const ledfon = new Image();
-ledfon.src = 'boulder/ledfon.png';
+ledfon.src = 'ledfon.png';
 
 const led = new Image();
-led.src = 'boulder/led.png';
+led.src = 'led.png';
 
 const ledalmaz = new Image();
-ledalmaz.src = 'boulder/ledalmaz.png';
+ledalmaz.src = 'ledalmaz.png';
 
 const ledkirpich = new Image();
-ledkirpich.src = 'boulder/ledkirpich.png';
+ledkirpich.src = 'ledkirpich.png';
 
 const mamont = new Image();
-mamont.src = 'boulder/mamont.png';
+mamont.src = 'mamont.png';
 
 const bastpl = new Image();
-bastpl.src = 'boulder/bastpl.png';
+bastpl.src = 'bastpl.png';
 
 const bukvy = new Image();
-bukvy.src = 'boulder/bukvy.png';
+bukvy.src = 'bukvy.png';
 
 const gamaumer = new Image();
-gamaumer.src = 'boulder/gamaumer.png';
+gamaumer.src = 'gamaumer.png';
 
 const contvopr = new Image();
-contvopr.src = 'boulder/contvopr.png';
+contvopr.src = 'contvopr.png';
 
 const cont = new Image();
-cont.src = 'boulder/cont.png';
+cont.src = 'cont.png';
 
 const presse = new Image();
-presse.src = 'boulder/presse.png';
+presse.src = 'presse.png';
 
 const bug = new Image();
-bug.src = 'boulder/bug.png';
+bug.src = 'bug.png';
 
 const nintendo = new Image();
-nintendo.src = 'boulder/nintendo.png';
+nintendo.src = 'nintendo.png';
 
 const menuoblako = new Image();
-menuoblako.src = 'boulder/menuoblako.png';
+menuoblako.src = 'menuoblako.png';
 
 const menupochva = new Image();
-menupochva.src = 'boulder/menupochva.png';
+menupochva.src = 'menupochva.png';
 
 const boulderdash = new Image();
-boulderdash.src = 'boulder/boulderdash.png';
+boulderdash.src = 'boulderdash.png';
 
 const paus = new Image();
-paus.src = 'boulder/paus.png';
+paus.src = 'paus.png';
 
 const infolevel = new Image();
-infolevel.src = 'boulder/infolevel.png';
+infolevel.src = 'infolevel.png';
 
 const inforamki = new Image();
-inforamki.src = 'boulder/inforamki.png';
+inforamki.src = 'inforamki.png';
 
 const zifry = new Image();
-zifry.src = 'boulder/zifry.png';
+zifry.src = 'zifry.png';
 
 const hertrup = new Image();
-hertrup.src = 'boulder/hertrup.png';
+hertrup.src = 'hertrup.png';
 
 const exit = new Image();
-exit.src = 'boulder/exit.png';
+exit.src = 'exit.png';
 
 const hervin = new Image();
-hervin.src = 'boulder/hervin.png';
+hervin.src = 'hervin.png';
 
 const door = new Image();
-door.src = 'boulder/door.png';
+door.src = 'door.png';
 
 const magicWoll = new Image();
-magicWoll.src = 'boulder/magicWoll.png';
+magicWoll.src = 'magicWoll.png';
 
 const mioba = new Image();
-mioba.src = 'boulder/mioba.png';
+mioba.src = 'mioba.png';
 
 const chetverka = new Image();
-chetverka.src = 'boulder/chetverka.png';
+chetverka.src = 'chetverka.png';
 
 const dethstar = new Image();
-dethstar.src = 'boulder/dethstar.png';
+dethstar.src = 'dethstar.png';
 
 const babochka = new Image();
-babochka.src = 'boulder/babochka.png';
+babochka.src = 'babochka.png';
 
 const chudo1 = new Image();
-chudo1.src = 'boulder/chudo1.png';
+chudo1.src = 'chudo1.png';
 
 const her = new Image();
-her.src = 'boulder/her.png';
+her.src = 'her.png';
 
 const almaz = new Image();
-almaz.src = 'boulder/almaz.png';
+almaz.src = 'almaz.png';
 
 const ground = new Image();
-ground.src = 'boulder/ground.png';
+ground.src = 'ground.png';
 
 const stone = new Image();
-stone.src = 'boulder/stone.png';
+stone.src = 'stone.png';
 
 const fon = new Image();
-fon.src = 'boulder/fon.png';
+fon.src = 'fon.png';
 
 const kirpich = new Image();
-kirpich.src = 'boulder/kirpich.png';
+kirpich.src = 'kirpich.png';
 
 const fir1 = new Image();
-fir1.src = 'boulder/fir1.png';
+fir1.src = 'fir1.png';
 
 const fir2 = new Image();
-fir2.src = 'boulder/fir2.png';
+fir2.src = 'fir2.png';
 
 const fir3 = new Image();
-fir3.src = 'boulder/fir3.png';
+fir3.src = 'fir3.png';
 
 const fir4 = new Image();
-fir4.src = 'boulder/fir4.png';
+fir4.src = 'fir4.png';
 
 const fir5 = new Image();
-fir5.src = 'boulder/fir5.png';
+fir5.src = 'fir5.png';
 
 const fir6 = new Image();
-fir6.src = 'boulder/fir6.png';
+fir6.src = 'fir6.png';
 
 const fir7 = new Image();
-fir7.src = 'boulder/fir7.png';
+fir7.src = 'fir7.png';
 
 const fir8 = new Image();
-fir8.src = 'boulder/fir8.png';
+fir8.src = 'fir8.png';
 
 const fir9 = new Image();
-fir9.src = 'boulder/fir9.png';
+fir9.src = 'fir9.png';
 
 const fir10 = new Image();
-fir10.src = 'boulder/fir10.png';
+fir10.src = 'fir10.png';
 
 const fir11 = new Image();
-fir11.src = 'boulder/fir11.png';
+fir11.src = 'fir11.png';
 
 const fir12 = new Image();
-fir12.src = 'boulder/fir12.png';
+fir12.src = 'fir12.png';
 
 const fir13 = new Image();
-fir13.src = 'boulder/fir13.png';
+fir13.src = 'fir13.png';
 
 const fir14 = new Image();
-fir14.src = 'boulder/fir14.png';
+fir14.src = 'fir14.png';
 
 const fir15 = new Image();
-fir15.src = 'boulder/fir15.png';
+fir15.src = 'fir15.png';
 
 const fir16 = new Image();
-fir16.src = 'boulder/fir16.png';
+fir16.src = 'fir16.png';
 
 const fir17 = new Image();
-fir17.src = 'boulder/fir17.png';
+fir17.src = 'fir17.png';
 
 const fir18 = new Image();
-fir18.src = 'boulder/fir18.png';
+fir18.src = 'fir18.png';
 
 const fir19 = new Image();
-fir19.src = 'boulder/fir19.png';
+fir19.src = 'fir19.png';
 
 const fir20 = new Image();
-fir20.src = 'boulder/fir20.png';
+fir20.src = 'fir20.png';
 
 const fir21 = new Image();
-fir21.src = 'boulder/fir21.png';
+fir21.src = 'fir21.png';
 
 const fir22 = new Image();
-fir22.src = 'boulder/fir22.png';
+fir22.src = 'fir22.png';
 
 const fir23 = new Image();
-fir23.src = 'boulder/fir23.png';
+fir23.src = 'fir23.png';
 
 const fir24 = new Image();
-fir24.src = 'boulder/fir24.png';
+fir24.src = 'fir24.png';
 
 const fir25 = new Image();
-fir25.src = 'boulder/fir25.png';
+fir25.src = 'fir25.png';
 
 const fir26 = new Image();
-fir26.src = 'boulder/fir26.png';
+fir26.src = 'fir26.png';
 
 const fir27 = new Image();
-fir27.src = 'boulder/fir27.png';
+fir27.src = 'fir27.png';
 
 const fir28 = new Image();
-fir28.src = 'boulder/fir28.png';
+fir28.src = 'fir28.png';
 
 const fir29 = new Image();
-fir29.src = 'boulder/fir29.png';
+fir29.src = 'fir29.png';
 
 const fir30 = new Image();
-fir30.src = 'boulder/fir30.png';
+fir30.src = 'fir30.png';
 
 const fir31 = new Image();
-fir31.src = 'boulder/fir31.png';
+fir31.src = 'fir31.png';
 
 const fir32 = new Image();
-fir32.src = 'boulder/fir32.png';
+fir32.src = 'fir32.png';
 
 const fir33 = new Image();
-fir33.src = 'boulder/fir33.png';
+fir33.src = 'fir33.png';
 
 const fir34 = new Image();
-fir34.src = 'boulder/fir34.png';
+fir34.src = 'fir34.png';
 
 const fir35 = new Image();
-fir35.src = 'boulder/fir35.png';
+fir35.src = 'fir35.png';
 
 const fir36 = new Image();
-fir36.src = 'boulder/fir36.png';
+fir36.src = 'fir36.png';
 
 const fir37 = new Image();
-fir37.src = 'boulder/fir37.png';
+fir37.src = 'fir37.png';
 
 const fir38 = new Image();
-fir38.src = 'boulder/fir38.png';
+fir38.src = 'fir38.png';
 
 const fir39 = new Image();
-fir39.src = 'boulder/fir39.png';
+fir39.src = 'fir39.png';
 
 const fir40 = new Image();
-fir40.src = 'boulder/fir40.png';
+fir40.src = 'fir40.png';
 
 const fir41 = new Image();
-fir41.src = 'boulder/fir41.png';
+fir41.src = 'fir41.png';
 
 const fir42 = new Image();
-fir42.src = 'boulder/fir42.png';
+fir42.src = 'fir42.png';
 
 const fir43 = new Image();
-fir43.src = 'boulder/fir43.png';
+fir43.src = 'fir43.png';
 
 const fir44 = new Image();
-fir44.src = 'boulder/fir44.png';
+fir44.src = 'fir44.png';
 
 const fir45 = new Image();
-fir45.src = 'boulder/fir45.png';
+fir45.src = 'fir45.png';
 
 const fir46 = new Image();
-fir46.src = 'boulder/fir46.png';
+fir46.src = 'fir46.png';
 
 const fir47 = new Image();
-fir47.src = 'boulder/fir47.png';
+fir47.src = 'fir47.png';
 
 const fir48 = new Image();
-fir48.src = 'boulder/fir48.png';
+fir48.src = 'fir48.png';
 
 const fir49 = new Image();
-fir49.src = 'boulder/fir49.png';
+fir49.src = 'fir49.png';
 
 const fir50 = new Image();
-fir50.src = 'boulder/fir50.png';
+fir50.src = 'fir50.png';
 
 const fir51 = new Image();
-fir51.src = 'boulder/fir51.png';
+fir51.src = 'fir51.png';
 
 const fir52 = new Image();
-fir52.src = 'boulder/fir52.png';
+fir52.src = 'fir52.png';
 
 const fir53 = new Image();
-fir53.src = 'boulder/fir53.png';
+fir53.src = 'fir53.png';
 
 const fir54 = new Image();
-fir54.src = 'boulder/fir54.png';
+fir54.src = 'fir54.png';
 
 const fir55 = new Image();
-fir55.src = 'boulder/fir55.png';
+fir55.src = 'fir55.png';
 
 const fir56 = new Image();
-fir56.src = 'boulder/fir56.png';
+fir56.src = 'fir56.png';
 
 class ResourceTracker {
   constructor() {
@@ -605,7 +605,7 @@ const HzFon = function (x, y, z) {
     // let material = new THREE.MeshPhongMaterial({color:0x8844aa});   // greenish blue
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load('boulder/fon3d.png')),
+      map: track(loader.load('fon3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -623,7 +623,7 @@ const HzFon = function (x, y, z) {
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load('boulder/ledfon3d.png')),
+      map: track(loader.load('ledfon3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -636,7 +636,7 @@ const HzFon = function (x, y, z) {
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/afrgruntfon3d${i}.png`)),
+        map: track(loader.load(`afrgruntfon3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -662,7 +662,7 @@ const HzFon = function (x, y, z) {
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/okefon3d${i}.png`)),
+        map: track(loader.load(`okefon3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -688,7 +688,7 @@ const HzFon = function (x, y, z) {
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/avsfon3d${i}.png`)),
+        map: track(loader.load(`avsfon3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -714,7 +714,7 @@ const HzFon = function (x, y, z) {
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/amefon3d${i}.png`)),
+        map: track(loader.load(`amefon3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -796,7 +796,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     // let loader = new THREE.TextureLoader();
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/ground3d.png')),
+      map: track(loader.load('ground3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -808,7 +808,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/led3d.png')),
+      map: track(loader.load('led3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -822,7 +822,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
       geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
       material = new THREE.MeshPhongMaterial({
-        map: track(loader.load(`boulder/afrgrunt3d${i}.png`)),
+        map: track(loader.load(`afrgrunt3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -849,7 +849,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     // let loader = new THREE.TextureLoader();
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/okegrunt3d.png')),
+      map: track(loader.load('okegrunt3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -864,7 +864,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
       geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
       material = new THREE.MeshPhongMaterial({
-        map: track(loader.load(`boulder/avsgrunt3d${i}.png`)),
+        map: track(loader.load(`avsgrunt3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -889,9 +889,8 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     for (let i = 1; i <= 4; i++) {
       // loader = new THREE.TextureLoader();
       geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
-
       material = new THREE.MeshPhongMaterial({
-        map: track(loader.load(`boulder/amegrunt3d${i}.png`)),
+        map: track(loader.load(`amegrunt3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -924,7 +923,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     geometry = track(new THREE.DodecahedronBufferGeometry(radius, detail));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/stone3d.png')),
+      map: track(loader.load('stone3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -937,7 +936,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
       geometry = track(new THREE.DodecahedronBufferGeometry(radius, detail));
 
       material = new THREE.MeshPhongMaterial({
-        map: track(loader.load(`boulder/ledmam3d${i}.png`)),
+        map: track(loader.load(`ledmam3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -966,7 +965,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
 
     // {
     let gltfLoader = new GLTFLoader();
-    gltfLoader.load('boulder/cherep/cherep.gltf', (gltf) => {
+    gltfLoader.load('cherep/cherep.gltf', (gltf) => {
       root = track(gltf.scene);
       shadow2.add(root);
     });
@@ -1003,7 +1002,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
 
     // {
     gltfLoader = new GLTFLoader();
-    gltfLoader.load('boulder/zub/zub.gltf', (gltf) => {
+    gltfLoader.load('zub/zub.gltf', (gltf) => {
       root2 = track(gltf.scene);
       shadow3.add(root2);
     });
@@ -1034,7 +1033,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     geometry = track(new THREE.DodecahedronBufferGeometry(radius, detail));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/okestone3d.png')),
+      map: track(loader.load('okestone3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1046,7 +1045,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
     geometry = track(new THREE.DodecahedronBufferGeometry(radius, detail));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/avsstone3d.png')),
+      map: track(loader.load('avsstone3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1064,7 +1063,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
 
     // {
     let gltfLoader = new GLTFLoader();
-    gltfLoader.load('boulder/cherep/cherep.gltf', (gltf) => {
+    gltfLoader.load('cherep/cherep.gltf', (gltf) => {
       root = track(gltf.scene);
       shadow2.add(root);
     });
@@ -1101,7 +1100,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
 
     // {
     gltfLoader = new GLTFLoader();
-    gltfLoader.load('boulder/zub/zub.gltf', (gltf) => {
+    gltfLoader.load('zub/zub.gltf', (gltf) => {
       root2 = track(gltf.scene);
       shadow3.add(root2);
     });
@@ -1140,7 +1139,7 @@ const Hz = function (x, y, z, type, gabX, gabY, gabZ, color) {
 
   // {
   const gltfLoader = new GLTFLoader();
-  gltfLoader.load('boulder/alm/alm.gltf', (gltf) => {
+  gltfLoader.load('alm/alm.gltf', (gltf) => {
     root = track(gltf.scene);
     shadow2.add(root);
   });
@@ -1186,7 +1185,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/kirpich.png')),
+      map: track(loader.load('kirpich.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1200,7 +1199,7 @@ mem.push(resTracker);
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/ledkirpich3d.png')),
+      map: track(loader.load('ledkirpich3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1212,7 +1211,7 @@ mem.push(resTracker);
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/afrkirpich3d.png')),
+      map: track(loader.load('afrkirpich3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1224,7 +1223,7 @@ mem.push(resTracker);
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/okekirpich3d.png')),
+      map: track(loader.load('okekirpich3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1236,7 +1235,7 @@ mem.push(resTracker);
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/avskirpich3d.png')),
+      map: track(loader.load('avskirpich3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1248,7 +1247,7 @@ mem.push(resTracker);
     geometry = track(new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ));
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load('boulder/amekirpich3d.png')),
+      map: track(loader.load('amekirpich3d.png')),
       transparent: true,
       opacity: 0,
     });
@@ -1264,7 +1263,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load(`boulder/herAnim${i}.png`)),
+      map: track(loader.load(`herAnim${i}.png`)),
       transparent: true,
       opacity: 1,
     });
@@ -1314,7 +1313,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load(`boulder/herwin3d${i}.png`)),
+      map: track(loader.load(`herwin3d${i}.png`)),
       transparent: true,
       opacity: 1,
     });
@@ -1339,7 +1338,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/chudo3d${i}.png`)),
+        map: track(loader.load(`chudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1365,7 +1364,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/ledchudo3d${i}.png`)),
+        map: track(loader.load(`ledchudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1391,7 +1390,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/afrchudo3d${i}.png`)),
+        map: track(loader.load(`afrchudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1417,7 +1416,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/okechudo3d${i}.png`)),
+        map: track(loader.load(`okechudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1443,7 +1442,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/avschudo3d${i}.png`)),
+        map: track(loader.load(`avschudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1469,7 +1468,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/amechudo3d${i}.png`)),
+        map: track(loader.load(`amechudo3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1502,7 +1501,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshPhongMaterial({
-      map: track(loader.load(`boulder/door3d${i}.png`)),
+      map: track(loader.load(`door3d${i}.png`)),
       transparent: true,
       opacity: 0,
     });
@@ -1527,7 +1526,7 @@ mem.push(resTracker);
   // loader = new THREE.TextureLoader();
 
   material = new THREE.MeshBasicMaterial({
-    map: track(loader.load('boulder/star3d.png')),
+    map: track(loader.load('star3d.png')),
     transparent: true,
     opacity: 1,
   });
@@ -1547,7 +1546,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/babochka3d${i}.png`)),
+        map: track(loader.load(`babochka3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1573,7 +1572,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/okechudoalm3d${i}.png`)),
+        map: track(loader.load(`okechudoalm3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1599,7 +1598,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/avschudoalm3d${i}.png`)),
+        map: track(loader.load(`avschudoalm3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1625,7 +1624,7 @@ mem.push(resTracker);
       // loader = new THREE.TextureLoader();
 
       material = new THREE.MeshBasicMaterial({
-        map: track(loader.load(`boulder/amechudoalm3d${i}.png`)),
+        map: track(loader.load(`amechudoalm3d${i}.png`)),
         transparent: true,
         opacity: 0,
       });
@@ -1654,7 +1653,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load(`boulder/miob3d${i}.png`)),
+      map: track(loader.load(`miob3d${i}.png`)),
       transparent: true,
       opacity: 0,
     });
@@ -1686,7 +1685,7 @@ mem.push(resTracker);
     // loader = new THREE.TextureLoader();
 
     material = new THREE.MeshBasicMaterial({
-      map: track(loader.load(`boulder/magicwoll3d${i}.png`)),
+      map: track(loader.load(`magicwoll3d${i}.png`)),
       transparent: true,
       opacity: 0,
     });
