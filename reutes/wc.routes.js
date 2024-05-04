@@ -4,8 +4,8 @@ const Wc = require('../components/Wc');
 const Main = require('../components/Main');
 
 router.get('/', (req, res) => {
- // res.renderComponent(Boulder, { title: 'Boulder Dash' });
- res.renderComponent(Main, { title: 'main' });
+  res.renderComponent(Wc, { title: 'wc' });
+
 });
 
 module.exports = router;
