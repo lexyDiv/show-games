@@ -34,7 +34,7 @@ Fraction.prototype.checkAlarms_player = function () {
         drawImage: new Image(),
       };
 
-      a.drawImage.src = 'wc/menu/star.png';
+      a.drawImage.src = 'menu/star.png';
 
       this.radar_alarms.push(a);
     }

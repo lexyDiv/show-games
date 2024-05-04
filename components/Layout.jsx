@@ -3,7 +3,7 @@ const React = require('react');
 
 // eslint-disable-next-line react/prop-types
 function Layout({ title, children }) {
-  const cssPath = title === 'wc' ? 'wc/index.css' : title === 'Boulder Dash' ? 'boulder/index.css' : 'index.css';
+  const cssPath = title === 'wc' ? 'wc.css' : title === 'Boulder Dash' ? 'boulder.css' : 'index.css';
   return (
     <html lang="en">
       <head>

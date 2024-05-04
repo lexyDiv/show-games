@@ -56,5 +56,5 @@ LandObj.prototype.check_steny = function () {
   }
 
   this.imageToDraw = new Image();
-  this.imageToDraw.src = `wc/grunt/stena/${vc}${hc}${left}${right}${up}${down}.png`;
+  this.imageToDraw.src = `grunt/stena/${vc}${hc}${left}${right}${up}${down}.png`;
 };

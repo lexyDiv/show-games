@@ -35,7 +35,7 @@ const map_initialization = function () {
       }
 
       cell.imageToDraw = new Image();
-      cell.imageToDraw.src = `wc/grunt/${season}/basick.png`;
+      cell.imageToDraw.src = `grunt/${season}/basick.png`;
       cell.animX = Math.floor(Math.random() * 30) * 100;
 
       cell.sloy = 4;
@@ -163,7 +163,7 @@ const map_initialization = function () {
           if (j < 2 || !Math.floor(Math.random() * 3)) {
             basick_tem[j + 1].push(obj);
             obj.imageToDraw = new Image();
-            obj.imageToDraw.src = `wc/grunt/summer/basick_tem${String(1)}.png`; // img[j];
+            obj.imageToDraw.src = `grunt/summer/basick_tem${String(1)}.png`; // img[j];
             obj.basick_tem = j + 1;
             obj.sloy = 7;
             // obj.sw=true;
@@ -204,7 +204,7 @@ const map_initialization = function () {
     // console.log(cell);
 
     cell.imageToDraw = new Image();
-    cell.imageToDraw.src = "wc/grunt/summer/under_wood.png";
+    cell.imageToDraw.src = "grunt/summer/under_wood.png";
     cell.under_wood = true;
     cell.sloy = 6;
     rw[0].push(cell);
@@ -228,7 +228,7 @@ const map_initialization = function () {
         ) {
           rw[j + 1].push(obj);
           obj.imageToDraw = new Image();
-          obj.imageToDraw.src = `wc/grunt/summer/round_wood_${String(j + 1)}.png`; // img[j];
+          obj.imageToDraw.src = `grunt/summer/round_wood_${String(j + 1)}.png`; // img[j];
           obj.round_wood = j + 1;
           obj.sloy = 4 + j;
           // obj.sw=true;
@@ -251,7 +251,7 @@ const map_initialization = function () {
       if (!obj.water && !obj.water_line) {
         round_pesok_1.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_pesok_1.png";
+        obj.imageToDraw.src = "grunt/summer/round_pesok_1.png";
         obj.round_pesok_1 = true;
         obj.sloy = 2;
         obj.animX = Math.floor(Math.random() * 5) * 100;
@@ -270,7 +270,7 @@ const map_initialization = function () {
       if (!obj.water && !obj.water_line && !obj.round_pesok_1) {
         round_pesok_2.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_pesok_2.png";
+        obj.imageToDraw.src = "grunt/summer/round_pesok_2.png";
         obj.round_pesok_2 = true;
         obj.sloy = 3;
         obj.animX = Math.floor(Math.random() * 7) * 100;
@@ -297,7 +297,7 @@ const map_initialization = function () {
       ) {
         round_pesok_3.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_pesok_3.png";
+        obj.imageToDraw.src = "grunt/summer/round_pesok_3.png";
         obj.round_pesok_3 = true;
         obj.sloy = 2;
         obj.animX = Math.floor(Math.random() * 1) * 100;
@@ -340,7 +340,7 @@ const map_initialization = function () {
       ) {
         round_stown_1.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_stown_1.png";
+        obj.imageToDraw.src = "grunt/summer/round_stown_1.png";
         obj.round_stown_1 = true;
         obj.sloy = 2;
         obj.animX = Math.floor(Math.random() * 30) * 100;
@@ -372,7 +372,7 @@ const map_initialization = function () {
       ) {
         round_stown_2.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_stown_2.png";
+        obj.imageToDraw.src = "grunt/summer/round_stown_2.png";
         obj.round_stown_2 = true;
         obj.sloy = 1;
         obj.animX = Math.floor(Math.random() * 12) * 100;
@@ -408,7 +408,7 @@ const map_initialization = function () {
       ) {
         round_stown_3.push(obj);
         obj.imageToDraw = new Image();
-        obj.imageToDraw.src = "wc/grunt/summer/round_stown_3.png";
+        obj.imageToDraw.src = "grunt/summer/round_stown_3.png";
         obj.round_stown_3 = true;
         obj.sloy = 0;
         obj.animX = Math.floor(Math.random() * 12) * 100;

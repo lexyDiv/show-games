@@ -1,3 +1,5 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
 /* eslint-disable quotes */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
@@ -691,7 +693,7 @@ let do_global_start = {
     alfa_start: 0,
   },
 };
-do_global_start.imageToDraw.src = "wc/title_images/first.png";
-do_global_start.imageToDraw_2.src = "wc/images/unit_menu_little_liters_4.png";
+do_global_start.imageToDraw.src = "title_images/first.png";
+do_global_start.imageToDraw_2.src = "images/unit_menu_little_liters_4.png";
 
 const title = new Title(1);

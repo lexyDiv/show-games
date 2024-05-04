@@ -36,15 +36,15 @@ LandObj.prototype.check_gory = function () {
 
   if (!left && !right) {
     this.imageToDraw = new Image();
-    this.imageToDraw.src = `wc/grunt/${season}/gora_free.png`;
+    this.imageToDraw.src = `grunt/${season}/gora_free.png`;
   } else if (left && right) {
     this.imageToDraw = new Image();
-    this.imageToDraw.src = `wc/grunt/${season}/gora_closed.png`;
+    this.imageToDraw.src = `grunt/${season}/gora_closed.png`;
   } else if (!left && right) {
     this.imageToDraw = new Image();
-    this.imageToDraw.src = `wc/grunt/${season}/gora_left_free.png`;
+    this.imageToDraw.src = `grunt/${season}/gora_left_free.png`;
   } else if (left && !right) {
     this.imageToDraw = new Image();
-    this.imageToDraw.src = `wc/grunt/${season}/gora_right_free.png`;
+    this.imageToDraw.src = `grunt/${season}/gora_right_free.png`;
   }
 };

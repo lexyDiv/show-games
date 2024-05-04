@@ -33,8 +33,8 @@ function GameCard({ card }) {
                 {text2}
               </small>
             </p>
-            
-            <a className="a" href={`/${id}`}><button type="button" className="btn btn-primary btn-sm">start</button></a>
+
+            <a className="a" href={`/${id}`}><button type="button" className="btn btn-primary btn-sm">Start game</button></a>
           </div>
 
         </div>
