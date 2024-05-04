@@ -1,58 +1,45 @@
-body, html{
-    background-color: rgb(58, 58, 58);
-    color: red;
-}
-
-
-#base {
-    background-color: rgb(58, 58, 58);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    height: 100%;
+#body {
+  background-color: rgb(58, 58, 58);
 }
 
 .my-nav {
-    /* background-color: rgb(53, 52, 52); */
-    background-color: rgb(73, 73, 73);
-    height: 100px;
-    z-index: 2;
+  /* background-color: rgb(53, 52, 52); */
+  background-color: rgb(73, 73, 73);
+  height: 100px;
+  z-index: 2;
 }
 
 .nav-item {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 #photo {
-    height: 80px;
-    border-radius: 5px;
+  height: 80px;
+  border-radius: 5px;
 }
 
 .card {
-    margin: 30px;
-    /* height: 270px; */
-    color: whitesmoke;
+  margin: 30px;
+  color: whitesmoke;
 }
 
 #cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .col-md-4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .small {
-    margin-top: -17px;
+  margin-top: -17px;
 }
 
 .a {
-    text-decoration: none;
+  text-decoration: none;
 }

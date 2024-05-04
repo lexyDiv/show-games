@@ -4,11 +4,14 @@ const React = require('react');
 
 function GameCard({ card }) {
   const {
-    title, image, text1, text2, id,
+    title, image, text1, text2, text3, id,
   } = card;
 
   return (
-    <div className="card mb-3" style={{ maxWidth: '740px', backgroundColor: 'rgb(77, 77, 77)' }}>
+    <div
+      className="card mb-3"
+      style={{ maxWidth: '740px', backgroundColor: 'rgb(77, 77, 77)' }}
+    >
       <div className="row g-0">
         <div className="col-md-4">
           <img src={image} className="img-fluid rounded-start" alt="..." />
@@ -26,19 +29,32 @@ function GameCard({ card }) {
               Важно :
             </p>
             <p className="card-text small">
-              <small style={{
-                fontStyle: 'italic',
-              }}
+              <small
+                style={{
+                  fontStyle: 'italic',
+                  color: 'violet',
+                }}
+              >
+                {text3}
+              </small>
+            </p>
+            <p className="card-text small">
+              <small
+                style={{
+                  fontStyle: 'italic',
+                }}
               >
                 {text2}
               </small>
             </p>
 
-            <a className="a" href={`/${id}`}><button type="button" className="btn btn-primary btn-sm">Start game</button></a>
+            <a className="a" href={`/${id}`}>
+              <button type="button" className="btn btn-primary btn-sm">
+                Start game
+              </button>
+            </a>
           </div>
-
         </div>
-
       </div>
     </div>
   );
