@@ -10,7 +10,7 @@ const wcRoutes = require('./reutes/wc.routes');
 const boulderRoutes = require('./reutes/boulder.routes');
 const ssr = require('./middleweres/renedrComponent');
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(__dirname));
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(ssr);
 app.use('/', mainRoutes);
