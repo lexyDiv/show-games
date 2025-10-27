@@ -20,7 +20,7 @@ const fractionsCrate = function () {
         f.name,
         f.control,
         [
-          new Unit(1, f.x, f.y, 2, f.name, f.nation),
+          new Peon(1, f.x, f.y, 2, f.name, f.nation),
           // new Unit( "rizar",f.x,f.y+1,5,f.name,f.nation),
           // new Unit(3 ,f.x,f.y+2,2,f.name,f.nation),
         ],
@@ -34,8 +34,8 @@ const fractionsCrate = function () {
 
       fr.createShablon = JSON.parse(JSON.stringify(f.createShablon));
 
-      fr.gold = 1500000;
-      fr.wood = 1500000;
+      fr.gold = 5000;
+      fr.wood = 3000;
       fr.oil = 1000;
 
       fractions.push(fr);

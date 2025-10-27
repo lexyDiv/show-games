@@ -17,7 +17,7 @@ const game_music_control = function () {
         const ran = Math.floor(Math.random() * 5);
 
         const m = new Audio();
-        m.src = `wc/music/${player.nation}/${String(ran + 1)}.mp3`;
+        m.src = `music/${player.nation}/${String(ran + 1)}.mp3`;
 
         music = { melody: m, min: 0, max: game_musics_h[ran].max };
       }

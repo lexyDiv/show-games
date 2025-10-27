@@ -282,8 +282,7 @@ const Title = function (list) {
       active: true,
       type: 's',
       animY: 100,
-      // kaskad_keys:["None","Orc","Human"],
-      txt: season,
+      txt: season, /// changet for deploy
       txt_little: [
         {
           x: 200,
@@ -375,18 +374,18 @@ const Title = function (list) {
       },
     ],
     base_keys: [
-      {
-        x: 450,
-        y: 300,
-        gabX: 200,
-        gabY: 30,
-        alfa: 0,
-        alfa_shadow: 0,
-        text_a: 'New Campaign',
-        mas: 1,
-        act: 'new',
-        type: 1,
-      },
+      // {
+      //   x: 450,
+      //   y: 300,
+      //   gabX: 200,
+      //   gabY: 30,
+      //   alfa: 0,
+      //   alfa_shadow: 0,
+      //   text_a: 'New Campaign',
+      //   mas: 1,
+      //   act: 'new',
+      //   type: 1,
+      // },
       {
         x: 450,
         y: 400,

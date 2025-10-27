@@ -19,7 +19,7 @@ Title.prototype.prog_draw = function () {
   if (this.list === 'and') {
     if (global_zanaves.alfa === 1 && !this.list_and.timer) {
       this.list_5.imageToDraw = new Image();
-      this.list_5.imageToDraw.src = `wc/menu/${this.style}_${win_or_loose}.png`;
+      this.list_5.imageToDraw.src = `menu/${this.style}_${win_or_loose}.png`;
 
       if (music) {
         music.melody.pause();
@@ -78,8 +78,8 @@ Title.prototype.prog_draw = function () {
 
       this.list_1.imageToDraw = new Image();
       this.list_1.imageToDraw_2 = new Image();
-      this.list_1.imageToDraw.src = 'wc/title_images/fir.png';
-      this.list_1.imageToDraw_2.src = 'wc/title_images/fir_full.png';
+      this.list_1.imageToDraw.src = 'title_images/fir.png';
+      this.list_1.imageToDraw_2.src = 'title_images/fir_full.png';
 
       global_zanaves.alfa_step = 0.03;
       global_zanaves.timer = 30;
@@ -101,14 +101,14 @@ Title.prototype.prog_draw = function () {
           // sound,start_time,out_time,unit,sound_type
 
           let sound = new Sound(new Audio(), 0.3, 3.2, undefined, undefined);
-          sound.sound.src = 'wc/sounds/menu_sounds/firzv.mp3';
+          sound.sound.src = 'sounds/menu_sounds/firzv.mp3';
 
           sounds_menu.push(sound);
         }
 
         if (this.list_1.timer === 215) {
           let sound = new Sound(new Audio(), 0, 2.3, undefined, undefined);
-          sound.sound.src = 'wc/sounds/menu_sounds/ggg.wav';
+          sound.sound.src = 'sounds/menu_sounds/ggg.wav';
 
           sounds_menu.push(sound);
         }
@@ -185,8 +185,8 @@ Title.prototype.prog_draw = function () {
         this.list_1.alfa = 1;
         this.list_1.imageToDraw = new Image();
         this.list_1.imageToDraw_2 = new Image();
-        this.list_1.imageToDraw.src = 'wc/font/!.png';
-        this.list_1.imageToDraw_2.src = 'wc/font/!.png';
+        this.list_1.imageToDraw.src = 'font/!.png';
+        this.list_1.imageToDraw_2.src = 'font/!.png';
 
         this.list = 2;
         return;
@@ -208,10 +208,10 @@ Title.prototype.prog_draw = function () {
     if (!this.list_2.timer) {
       // this.imageToDraw=intro;//tanker_oil_h_blue;
       this.list_2.imageToDraw_2 = new Image();
-      this.list_2.imageToDraw_2.src = 'wc/title_images/shadow.png';
+      this.list_2.imageToDraw_2.src = 'title_images/shadow.png';
 
       vid = document.createElement('video');
-      vid.src = 'wc/video/intro.mp4';
+      vid.src = 'video/intro.mp4';
 
       this.list_2.x = 450;
       this.list_2.y = 200;
@@ -296,7 +296,7 @@ Title.prototype.prog_draw = function () {
     if (level === 1) {
       if (!this.list_4.timer) {
         vid = document.createElement('video');
-        vid.src = 'wc/video/all.mp4';
+        vid.src = 'video/all.mp4';
 
         if (level === 1) {
           vid.currentTime = 7;
@@ -543,8 +543,8 @@ Title.prototype.prog_draw = function () {
 
       this.list_3.imageToDraw = new Image();
       this.list_3.imageToDraw_2 = new Image();
-      this.list_3.imageToDraw.src = 'wc/title_images/menu_base_q.png';
-      this.list_3.imageToDraw_2.src = 'wc/title_images/menu_base_zap.png';
+      this.list_3.imageToDraw.src = 'title_images/menu_base_q.png';
+      this.list_3.imageToDraw_2.src = 'title_images/menu_base_zap.png';
 
       this.list_3.punkts = [];
       this.list_3.texts = [];
@@ -574,7 +574,7 @@ Title.prototype.prog_draw = function () {
     ) {
       if (!music) {
         let m = new Audio();
-        m.src = 'wc/music/intro.mp3';
+        m.src = 'music/intro.mp3';
 
         music = {
           melody: m, start: false, min: 0, max: 77,

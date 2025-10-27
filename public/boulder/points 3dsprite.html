@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>First Three.js app</title>
+    <style>
+ html, body {
+   margin: 0;
+   height: 100%;
+}
+#c {
+   width: 100%;
+   height: 100%;
+   display: block;
+}    
+      </style>
+  </head>
+  <body>
+
+<canvas id="c"></canvas>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+
+
+
+
+<script type="module">
+
+
+
+////////////////
+
+const babaklech=new Image();
+babaklech.src="babaklech.png"
+
+//////////////
+
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
+
+//function main() {
+  const canvas = document.querySelector('#c');
+  
+ 
+
+
+ 
+  let renderer = new THREE.WebGLRenderer({canvas});
+  
+ 
+
+
+  
+  const fov = 75;
+  const aspect = 2;  // the canvas default
+  const near = 0.1;
+  const far = 100;
+  
+ 
+  
+  
+  
+  
+  let camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  
+  
+
+
+  camera.position.z = 5;
+  //camera.position.y = 1;
+  
+
+  let scene = new THREE.Scene();
+  
+ 
+   let lightColor = 0xFFFFFF;
+  let intensity = 1;
+  let light = new THREE.DirectionalLight(lightColor, intensity);
+  light.position.set(-1, 2, 4);
+
+
+ let lightColor2 = 0xFFFFFF;
+  let intensity2 = 1;
+  let light2 = new THREE.DirectionalLight(lightColor2, intensity2);
+  light2.position.set(1, -2, 4);
+
+ 
+//////////
+ // const boxWidth = 1;
+ // const boxHeight = 1;
+ // const boxDepth = 1;
+ // const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+ // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});  // greenish blue
+
+ // const cube = new THREE.Mesh(geometry, material);
+ // scene.add(cube);
+
+  //renderer.render(scene, camera);
+  //////////////
+  
+  
+  
+  
+let Hz=function(x,y,z,type,gabX,gabY,gabZ,color){
+	
+	this.x=x;
+	this.y=y;
+	this.z=z;
+	this.type=type;
+	this.gabX=gabX;
+	this.gabY=gabY;
+	this.gabZ=gabZ;
+	this.geometry=0;
+	this.material=0;
+	this.rotationX=0;
+	this.rotationY=0;
+	this.rotationZ=0;
+	this.color=color;
+	
+	this.gSp=0;
+	this.vSp=0;
+	this.dSp=0;
+	
+	this.nature=0;
+	this.shadow=0;
+	
+
+	
+	this.widthSegments = 0;  
+
+this.heightSegments = 0;  
+
+this.depthSegments = 0; 
+
+this.segments=0;
+	
+this.radius=0;	
+
+this.radialSegments=0;
+	
+	
+	this.moove=0;
+	this.moove2=0;
+	this.moove3=0;
+	
+	
+	
+};
+
+
+Hz.prototype.create=function(arg){
+	
+
+ if(this.type===1){
+	 
+   this.geometry = new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ);
+
+    this.material = new THREE.MeshPhongMaterial({color: 0x44aa88});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);
+
+
+  
+ }
+ 
+ else if(this.type===2){
+	 
+   this.geometry = new THREE.BoxGeometry(this.gabX, this.gabY, this.gabZ);
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+  else if(this.type===3){
+	 
+   this.geometry = new THREE.BoxBufferGeometry(this.gabX,this.gabY,this.gabZ);
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+   else if(this.type===4){
+	
+
+	this.widthSegments = 4;  
+
+this.heightSegments = 4;  
+
+this.depthSegments = 4; 
+	
+   this.geometry = new THREE.BoxBufferGeometry(
+    this.gabX, this.gabY, this.gabZ,
+    this.widthSegments, this.heightSegments, this.depthSegments);
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+    else if(this.type===5){
+	
+
+this.radius = 1;  
+
+this.segments = 24;  
+
+this.geometry = new THREE.CircleBufferGeometry(this.radius, this.segments);
+
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+ 
+     else if(this.type===6){
+	
+
+this.radius = 1;  
+
+this.gabY = 2;  
+
+this.radialSegments = 16;  
+
+this.geometry = new THREE.ConeBufferGeometry(this.radius, this.gabY, this.radialSegments);
+
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+ 
+      else if(this.type===7){
+	
+
+this.radiusTop = 1;  
+
+this.radiusBottom = 1;  
+
+this.gabY = 2;  
+
+this.radialSegments = 12;  
+
+this.geometry = new THREE.CylinderBufferGeometry(
+    this.radiusTop, this.radiusBottom,this.gabY, this.radialSegments);
+
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+	 
+ }
+ 
+ 
+       else if(this.type===8){
+
+let koof=1;
+	
+this.shape = new THREE.Shape();
+const x = -2.5/koof;
+const y = -5/koof;
+this.shape.moveTo(x + 2.5/koof, y + 2.5/koof);
+this.shape.bezierCurveTo(x + 2.5/koof, y + 2.5/koof, x + 2/koof, y, x, y);
+this.shape.bezierCurveTo(x - 3/koof, y, x - 3/koof, y + 3.5/koof, x - 3/koof, y + 3.5/koof);
+this.shape.bezierCurveTo(x - 3/koof, y + 5.5/koof, x - 1.5/koof, y + 7.7/koof, x + 2.5/koof, y + 9.5/koof);
+this.shape.bezierCurveTo(x + 6/koof, y + 7.7/koof, x + 8/koof, y + 4.5/koof, x + 8/koof, y + 3.5/koof);
+this.shape.bezierCurveTo(x + 8/koof, y + 3.5/koof, x + 8/koof, y, x + 5/koof, y);
+this.shape.bezierCurveTo(x + 3.5/koof, y, x + 2.5/koof, y + 2.5/koof, x + 2.5/koof, y + 2.5/koof);
+
+let extrudeSettings = {
+  steps: 2,  
+
+  depth: 2,  
+
+  bevelEnabled: true,  
+  bevelThickness: 1,  
+
+  bevelSize: 1,  
+
+  bevelSegments: 2,  
+
+};
+
+this.geometry = new THREE.ExtrudeBufferGeometry(this.shape, extrudeSettings);
+
+
+////////////////////////////////
+
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color});   // greenish blue
+
+  this.shadow = new THREE.Mesh(this.geometry, this.material);	 
+	 
+//console.log(this.x);	 
+ }
+ 
+ else if(this.type===9){
+	
+let color=this.color;
+
+    this.material = new THREE.MeshPhongMaterial({color}); 
+
+
+
+ const loader = new THREE.FontLoader();
+    // promisify font loading
+    function loadFont(url) {
+      return new Promise((resolve, reject) => {
+        loader.load(url, resolve, undefined, reject);
+      });
+    }
+
+    async function doit() {
+      const font = await loadFont('https://threejsfundamentals.org/threejs/resources/threejs/fonts/helvetiker_regular.typeface.json');  
+      hzBox[arg].geometry = new THREE.TextBufferGeometry(' mama-svinka', {
+        font: font,
+        size: 2.0,
+        height: .2,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.15,
+        bevelSize: .3,
+        bevelSegments: 5,
+      });
+      hzBox[arg].shadow = new THREE.Mesh(hzBox[arg].geometry, hzBox[arg].material);
+      hzBox[arg].geometry.computeBoundingBox();
+      hzBox[arg].geometry.boundingBox.getCenter(hzBox[arg].shadow.position).multiplyScalar(-1);
+
+      const parent = new THREE.Object3D();
+      parent.add();
+
+      addObject(-1, -1, parent);
+    }
+    doit();	
+	 
+
+   
+	 
+ }
+
+ 
+      else if(this.type===10){
+	
+
+
+const map = new THREE.TextureLoader().load( 'babaklech.png' );
+const material = new THREE.SpriteMaterial( { map: map } );
+
+this.shadow = new THREE.Sprite( material );
+//scene.add( sprite );
+
+	
+ }
+ 
+      else if(this.type===11){
+	
+
+  const loader = new THREE.TextureLoader();
+
+  const materials = [
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+    new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1}),
+  ];
+
+
+ const geometry = new THREE.BoxBufferGeometry(this.gabX,this.gabY,this.gabZ);
+ 
+ 
+
+this.shadow  = new THREE.Mesh(geometry, materials);
+
+ 
+//scene.add( sprite );
+
+	
+ } 
+ 
+ 
+ 
+       else if(this.type===12){
+	
+
+  const loader = new THREE.TextureLoader();
+
+  const materials = new THREE.MeshBasicMaterial({map: loader.load('babaklech.png'), transparent: true, opacity: 1})
+   
+  
+
+
+const width = this.gabX;  
+
+const height = this.gabY;  
+
+const geometry = new THREE.PlaneBufferGeometry(width, height);
+
+this.shadow  = new THREE.Mesh(geometry, materials);
+//scene.add( sprite );
+
+	
+ }
+ 
+ else if(this.type===13){
+	 
+	 
+	 this.shadow=new THREE.Object3D();
+	 
+	this.babys=[new Hz(0,0,0,4,1,1,1,0x8844aa)]; 
+	
+	this.babys[0].create();
+	 
+ }
+ else if(this.type===14){
+	 
+
+	 
+	 
+	this. geometry = new THREE.Geometry(); 
+	 
+	this. geometry.vertices.push(
+	 
+	  new THREE.Vector3(0,-2,0),  // 0
+  new THREE.Vector3(1,0,0 ),  // 1
+  new THREE.Vector3(-1,0,0),  // 2
+  new THREE.Vector3( 0,1,0 ),  // 3
+  new THREE.Vector3(0,0,1),  // 4
+  new THREE.Vector3( 0, 0, -1),  // 5
+ // new THREE.Vector3(-0.5, 0.5 , -0.5),  // 6
+ // new THREE.Vector3( 0.5, 0.5 , -0.5),  // 7
+	 );
+	 
+	
+this.geometry.faces.push(
+
+   new THREE.Face3(3,4,1),
+  new THREE.Face3(3,2,4),
+  // right
+  new THREE.Face3(0,4,2),
+  new THREE.Face3(0,1,4),
+  
+     new THREE.Face3(5,3,1),
+  new THREE.Face3(2,3,5),
+  // right
+  new THREE.Face3(5,1,0),
+  new THREE.Face3(2,5,0),
+  // back
+ // new THREE.Face3(),
+ // new THREE.Face3(),
+  // left
+ // new THREE.Face3(4, 2, 6),
+ // new THREE.Face3(4, 0, 2),
+  // top
+ // new THREE.Face3(2, 7, 6),
+ // new THREE.Face3(2, 3, 7),
+  // bottom
+ // new THREE.Face3(4, 1, 0),
+ // new THREE.Face3(4, 5, 1),
+
+);
+
+this.geometry.computeFaceNormals();
+
+ this.material = new THREE.MeshPhongMaterial({color: 0x44aa88}); 
+	
+	
+this.shadow  = new THREE.Mesh(this.geometry,this.material);	
+	
+ }
+ 
+	
+};
+
+
+
+
+
+
+Hz.prototype.anim=function(){
+
+
+if(this.type===1){
+
+
+	
+	
+	this.rotationX+=0.01;
+	this.rotationY+=0.01;
+	
+	
+  this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;
+	
+	
+	
+	//this.light.position.x+=0.01;
+	
+	
+	////////////////
+	
+	  scene.add(this.shadow);
+  
+ 
+	
+	//////////
+}
+
+else if(this.type===2){
+
+
+	
+	
+	this.rotationX+=0.015;
+	this.rotationY+=0.015;
+	
+	
+  this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;
+	
+	
+	
+	//this.light.position.x+=0.01;
+	
+	
+	////////////////
+	
+	  scene.add(this.shadow);
+  
+ 
+	
+	//////////
+}
+
+else if(this.type===3||this.type===4||this.type===5||this.type===6||this.type===7||
+this.type===8||this.type===9||this.type===11){
+
+//this.moove++;
+
+//if(this.moove===100){this.type=4;console.log("ok");this.create();};
+	//this.create();
+	
+	this.rotationX+=0.015;
+	this.rotationY+=0.015;
+	
+	
+	
+  this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;
+	
+	
+	
+	//this.light.position.x+=0.01;
+	
+	
+	////////////////
+	
+	  scene.add(this.shadow);
+  
+ 
+	
+	//////////
+}
+
+else if(this.type===10||this.type===12){
+
+
+	
+	
+	//this.rotationX+=0.015;
+	//this.rotationY+=0.015;
+	this.rotationZ+=0.015;
+	//this.z+=0.01;
+	
+	
+	
+  this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;
+	
+	
+	
+	//this.light.position.x+=0.01;
+	
+	
+	////////////////
+	
+	  scene.add(this.shadow);
+  
+ 
+	
+	//////////
+}
+
+else if(this.type===13){
+
+
+
+//this.x+=0.01;
+
+//this.rotationX+=0.01;
+//this.rotationY+=0.01;
+this.rotationZ+=0.01;	
+	
+this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;	
+	
+	
+	this.babys[0].shadow.position.x=-2;
+	this.babys[0].shadow.rotation.x+=0.03;
+	
+	
+	
+	 scene.add(this.shadow);
+	 this.shadow.add(this.babys[0].shadow);
+	
+	
+}
+else if(this.type===14){
+	
+	
+//this.rotationX+=0.015;
+	this.rotationY+=0.015;
+	
+	
+	
+  this.shadow.position.x=this.x;
+  this.shadow.position.y=this.y;
+  this.shadow.position.z=this.z;
+	
+	this.shadow.rotation.x=this.rotationX;
+	this.shadow.rotation.y=this.rotationY;
+	this.shadow.rotation.z=this.rotationZ;
+	
+	
+	
+	//this.light.position.x+=0.01;
+	
+	
+	////////////////
+	
+	  scene.add(this.shadow);
+	
+	//console.log("ok");
+}
+
+
+	
+};
+
+
+Hz.prototype.checkCollision=function(){
+	
+	
+	for(let i=0;i<hzBox.length;i++){
+		
+
+		
+if(
+!(
+(this.x+this.gabX/2<hzBox[i].x-hzBox[i].gabX/2)||
+(this.x-this.gabX/2>hzBox[i].x+hzBox[i].gabX/2)||
+
+(this.y+this.gabY/2<hzBox[i].y-hzBox[i].gabY/2)||
+(this.y-this.gabY/2>hzBox[i].y+hzBox[i].gabY/2)||
+
+(this.z+this.gabZ/2<hzBox[i].z-hzBox[i].gabZ/2)||
+(this.z-this.gabZ/2>hzBox[i].z+hzBox[i].gabZ/2)
+
+)
+){console.log("ok");};
+		
+		
+	};
+	
+};
+
+
+
+
+var hzBox=[
+
+
+new Hz(0,0,0,14,1,1,1,0xaa8844),
+
+//new Hz(0,0,0,13,1,1,1),
+
+
+//new Hz(0,0,0,12,1,1,1,0x8844aa),
+
+//new Hz(0,0,0,11,1,1,1,0x8844aa),
+
+//new Hz(0,0,0,10,1,1,1),
+
+//new Hz(-11,0,0,9,1,1,1,0x8844aa),
+//new Hz(0,0,-40,8,1,1,1,0xaa8844),
+//new Hz(-4,0,0,7,1,1,1,0xaa8844),
+//new Hz(2,0,0,6,1,1,1,0x8844aa),
+//new Hz(-2,0,0,3,1,1,1,0x8844aa),
+
+//new Hz(0,0,0,4,1,1,1,0x8844aa),/////////////////
+
+//new Hz(4,0,0,5,1,1,1,0x8844aa),
+
+//new Hz(-2,0,0,2,1,1,1,0x8844aa),
+
+//new Hz(2,0,0,2,1,1,1,0xaa8844),
+
+//new Hz(-7,0,0,1,1,1,1),
+
+];
+
+
+
+
+let her=new Hz(-100,0,0,1,1,1,1)
+
+her.create();
+  
+ 
+for(let i=0;i<hzBox.length;i++){
+ hzBox[i].create(i);
+};
+  
+  
+  
+  let timer=0;
+  
+  let manipul=function(){
+	  
+	timer++;
+
+//console.log(timer);
+
+if(timer%200===0){hzBox.pop();};	
+	  
+  };
+  
+  
+
+  function resizeRendererToDisplaySize(renderer) {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const needResize = canvas.width !== width || canvas.height !== height;
+    if (needResize) {
+      renderer.setSize(width, height, false);
+    }
+    return needResize;
+  } ;
+  
+  
+  
+  setInterval(
+function(){
+
+
+   if (resizeRendererToDisplaySize(renderer)) {
+      const canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    };
+
+
+ 
+scene = new THREE.Scene();
+ scene.add(light);
+ scene.add(light2);
+ //manipul();
+ 
+
+    for(let i=0;i<hzBox.length;i++){
+		
+		hzBox[i].anim();
+		
+	};
+	
+	her.anim();
+	
+//her.x+=0.01;	
+	her.checkCollision();
+	
+	//her.y+=0.01;
+	//hzBox[0].z+=0.01;
+	//camera.rotation.y+=0.03;
+	//camera.position.x-=0.01;
+	//camera.rotation.z+=0.03;
+	
+	 //light.position.set(-1, 2, 4);
+	 
+	//light.position.x++;
+	// light.position.y--;
+	 
+
+//console.log(light.position.x);
+
+    renderer.render(scene, camera);
+
+ 
+	
+},30
+
+)
+  
+  
+  
+  
+ 
+
+$("body").keydown(function (event) {
+
+let kc=event.keyCode;
+
+//console.log(kc);
+}
+
+
+);
+
+ 
+  
+//}
+
+//main();
+
+
+
+
+</script>
+
+
+
+
+  </body>
+</html>

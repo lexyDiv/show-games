@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const Wc = require('../components/Wc');
+const Main = require('../components/Main');
 
 router.get('/', (req, res) => {
-  // res.send('papa loh');
-  res.renderComponent(Wc, { title: 'wc' });
+  res.renderComponent(Main, { title: 'main' });
 });
 
 module.exports = router;

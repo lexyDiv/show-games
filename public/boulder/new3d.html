@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>First Three.js app</title>
+    <style>
+ html, body {
+   margin: 0;
+   height: 100%;
+}
+#c {
+   width: 100%;
+   height: 100%;
+   display: block;
+}    
+      </style>
+  </head>
+  <body>
+
+<canvas id="c"></canvas>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+
+
+
+
+<script type="module">
+
+
+
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
+
+class ResourceTracker {
+  constructor() {
+    this.resources = new Set();
+  }
+  track(resource) {
+    if (resource.dispose || resource instanceof THREE.Object3D) {
+      this.resources.add(resource);
+    }
+    return resource;
+  }
+  untrack(resource) {
+    this.resources.delete(resource);
+  }
+  dispose() {
+    for (const resource of this.resources) {
+      if (resource instanceof THREE.Object3D) {
+        if (resource.parent) {
+          resource.parent.remove(resource);
+        }
+      }
+      if (resource.dispose) {
+        resource.dispose();
+      }
+    }
+    this.resources.clear();
+  }
+};
+
+//function main() {
+  const canvas = document.querySelector('#c');
+  const renderer = new THREE.WebGLRenderer({canvas});
+
+  const fov = 75;
+  const aspect = 2;  // the canvas default
+  const near = 0.1;
+  const far = 5;
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = 2;
+
+  const scene = new THREE.Scene();
+  const cubes = [];  // an array we can use to rotate the cubes
+
+
+  let resTracker = new ResourceTracker();
+    let track = resTracker.track.bind(resTracker);
+
+
+  function addStuffToScene() {
+    // resTracker = new ResourceTracker();
+    // track = resTracker.track.bind(resTracker);
+
+    const boxWidth = 1;
+    const boxHeight = 1;
+    const boxDepth = 1;
+    const geometry = track(new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth));
+
+    const loader = new THREE.TextureLoader();
+
+    const material = track(new THREE.MeshBasicMaterial({
+      map: track(loader.load('https://threejsfundamentals.org/threejs/resources/images/wall.jpg')),
+    }));
+    const cube = track(new THREE.Mesh(geometry, material));
+    scene.add(cube);
+    cubes.push(cube);  // add to our list of cubes to rotate
+    
+	
+	resTrackers.push(resTracker);
+	
+	
+  }
+
+
+
+/*
+  async function process() {
+    for (;;) {
+		
+		console.log(renderer.info);
+		
+      const resTracker = addStuffToScene();
+      await waitSeconds(2);
+      cubes.length = 0;  // remove the cubes
+      resTracker.dispose();
+      await waitSeconds(1);
+    }
+  }
+  
+  
+  //process();
+
+*/
+
+
+  function resizeRendererToDisplaySize(renderer) {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const needResize = canvas.width !== width || canvas.height !== height;
+    if (needResize) {
+      renderer.setSize(width, height, false);
+    }
+    return needResize;
+  }
+
+
+let time=0;
+
+let resTrackers=[];
+
+
+
+
+
+  setInterval(
+function(){
+
+   if (resizeRendererToDisplaySize(renderer)) {
+      const canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+
+time++;
+
+
+
+if(time===50){addStuffToScene();console.log(renderer.info);};
+
+if(time===100){
+	
+for(let i=0;i<resTrackers.length;i++){	
+	resTrackers[i].dispose();
+};
+	
+	
+	time=0;};
+
+  //  renderer.render(scene, camera);
+
+ 	 renderer.render(scene, camera);
+	
+},30
+
+)
+
+
+
+
+</script>
+
+
+
+
+  </body>
+</html>

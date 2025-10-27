@@ -8,8 +8,8 @@ Title.prototype.list_5_prog = function () {
   if (!this.list_5.timer) {
     this.list_5.imageToDraw = new Image();
     this.list_5.imageToDraw_2 = new Image();
-    this.list_5.imageToDraw.src = 'wc/menu/boock.png';
-    this.list_5.imageToDraw_2.src = 'wc/menu/boock_2.png';
+    this.list_5.imageToDraw.src = 'menu/boock.png';
+    this.list_5.imageToDraw_2.src = 'menu/boock_2.png';
     this.list_5.alfa = 1;
 
     this.get_text();
@@ -17,7 +17,7 @@ Title.prototype.list_5_prog = function () {
     if (level === 1) {
       this.list_5.image_act = new Image();
 
-      this.list_5.image_act.src = `wc/menu/act_1_${this.style}.png`;
+      this.list_5.image_act.src = `menu/act_1_${this.style}.png`;
     } else {
       this.list_5.image_act = false;
     }
@@ -185,7 +185,7 @@ Title.prototype.list_5_prog = function () {
   if (this.list_5.image_act && this.list_5.timer < 300 && this.list_5.alfa) {
     if (!music && this.list_5.timer === 45) {
       const m = new Audio();
-      m.src = 'wc/music/act.mp3';
+      m.src = 'music/act.mp3';
 
       music = {
         melody: m, start: false, min: 0, max: 5,
