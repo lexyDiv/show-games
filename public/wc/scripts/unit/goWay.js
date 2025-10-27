@@ -13,8 +13,9 @@ Unit.prototype.goWay = function (arg) {
 
   // console.log("ok");glob_deep iContaktWith
   // iStand
+  // hp
 
-  if (this.stepTakt < 1 && this.stepTakt >= 0) {
+  if (this.stepTakt < 1 && this.stepTakt >= 0 && this.hp > 0) {
     this.iGetMyCell = true;
 
     this.hotCell = this.cell;
@@ -178,7 +179,7 @@ Unit.prototype.goWay = function (arg) {
 
       this.iStand = true;
     }
-  } else {
+  } else if (this.hp > 0) {
     // if(!this.target){
     // this.holdToGo=10;
     // }
@@ -195,6 +196,11 @@ Unit.prototype.goWay = function (arg) {
     // if(!this.way.length&&this.stepTakt<=0){this.stepTakt=0;this.finish=0;};
 
     // console.log("ok");
+  } else if (this.hp <= 0) {
+    this.stepTakt = 0;
+    this.iStand = true;
+    this.iGetMyCell = true;
+    this.way = [];
   }
 
   // if(!this.way.length&&this.stepTakt<=0){this.finish=0;console.log("ok");};
